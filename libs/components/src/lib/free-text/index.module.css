@@ -1,0 +1,179 @@
+.c-free-text {
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  font-size: var(--text-font-size);
+  font-weight: var(--primary-font-regular);
+  line-height: var(--text-line-height);
+  row-gap: var(--text-paragraph-break);
+  display: grid;
+}
+
+.c-free-text strong {
+  color: var(--text-color-contrast);
+  font-weight: var(--primary-font-bold);
+}
+
+.c-free-text * {
+  margin: 0;
+}
+
+.c-free-text h1 {
+  font-size: var(--heading-one-font-size);
+  line-height: var(--heading-one-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-one-color);
+}
+
+.c-free-text h2 {
+  font-size: var(--heading-two-font-size);
+  line-height: var(--heading-two-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-two-color);
+}
+
+.c-free-text h3 {
+  font-size: var(--heading-three-font-size);
+  line-height: var(--heading-three-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-three-color);
+}
+
+.c-free-text h4 {
+  font-size: var(--heading-four-font-size);
+  line-height: var(--heading-four-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-four-color);
+}
+
+.c-free-text h5 {
+  font-size: var(--heading-five-font-size);
+  line-height: var(--heading-five-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-five-color);
+}
+
+.c-free-text h6 {
+  font-size: var(--heading-six-font-size);
+  line-height: var(--heading-six-line-height);
+  font-weight: var(--primary-font-bold);
+  color: var(--heading-six-color);
+}
+
+.c-free-text ins {
+  font-style: italic;
+}
+
+.c-free-text mark {
+  background-color: var(--text-color-contrast-alt);
+  color: var(--text-color-contrast-dark);
+  padding: var(--spacing-xs);
+}
+
+.c-free-text kbd {
+  background-color: var(--text-color-contrast);
+  color: var(--text-color-contrast-dark);
+  border-radius: 4px;
+  padding-left: var(--spacing-xs);
+  padding-right: var(--spacing-xs);
+}
+
+.c-free-text blockquote {
+  position: relative;
+  font-size: var(--quote-font-size);
+  font-weight: var(--primary-font-bold);
+  line-height: var(--quote-line-height);
+  color: var(--quote-color);
+  margin: var(--text-paragraph-break) 0;
+  padding-left: var(--quote-flourish-space);
+}
+
+.c-free-text blockquote:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1em;
+  content: var(--quote-flourish);
+  color: var(--quote-color-contrast);
+  font-size: var(--quote-flourish-size);
+  font-weight: var(--primary-font-regular);
+}
+
+.c-free-text blockquote footer {
+  font-size: var(--text-font-size);
+  font-weight: var(--primary-font-regular);
+}
+
+.c-free-text a {
+  color: var(--interactive-primary-contrast);
+  font-weight: var(--primary-font-bold);
+}
+
+.c-free-text a:hover {
+  cursor: pointer;
+}
+
+.c-free-text a:focus-visible {
+  color: var(--outline-color);
+  outline-style: var(--outline-style);
+  outline-color: var(--outline-color);
+  outline-width: var(--outline-width);
+  outline-offset: var(--outline-offset);
+}
+
+.c-free-text ul li::marker,
+.c-free-text ol li::marker {
+  color: var(--text-color-contrast);
+}
+
+.c-free-text hr {
+  display: inline-block;
+  background: var(--hr-flourish-color);
+  margin: var(--text-paragraph-break) auto;
+  height: 16px;
+  width: 16px;
+  border: 0;
+  transform: rotate(45deg);
+  position: relative;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.c-free-text hr:after,
+.c-free-text hr:before {
+  display: block;
+  width: 100px;
+  position: absolute;
+  content: '';
+  height: 4px;
+  background-color: var(--hr-border-color);
+}
+
+.c-free-text hr:after {
+  left: -100px;
+  transform: rotate(-45deg);
+  top: 63px;
+}
+
+.c-free-text hr:before {
+  left: 15px;
+  transform: rotate(-45deg);
+  top: -52px;
+}
+
+.c-free-text dl {
+  display: grid;
+  grid-template-columns: 35% auto;
+  column-gap: var(--spacing-md);
+  row-gap: var(--text-paragraph-break);
+}
+
+.c-free-text dl dt {
+  color: var(--text-color-contrast);
+  font-weight: var(--primary-font-bold);
+  grid-column: 1;
+  word-break: break-word;
+}
+
+.c-free-text dl dd {
+  grid-column: 2;
+}

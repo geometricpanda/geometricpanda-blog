@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+
+html {
+  font-size: 125%;
+}
+
+:root {
+  --primary-font: 'Josefin Sans', sans-serif;
+  --primary-font-regular: 300;
+  --primary-font-bold: 500;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  --outline-width: 4px;
+  --outline-color: #00bea7;
+  --outline-offset: 8px;
+  --outline-style: solid;
+
+  --interactive-font-line-adjust: 4px;
+  --interactive-font: var(--primary-font);
+  --interactive-font-size: 1.3rem;
+  --interactive-font-weight: var(--primary-font-bold);
+  --interactive-primary: #fff;
+  --interactive-primary-contrast: #ff67af;
+  --interactive-secondary: #fff;
+  --interactive-secondary-contrast: #5900bd;
+
+  --heading-border-width: 4px;
+  --heading-border-style: solid;
+  --heading-border-color: #fbc400;
+  --heading-border-color-contrast: #ce0061;
+
+  --heading-one-font-size: 2.5rem;
+  --heading-one-line-height: 1.2em;
+  --heading-one-color: var(--text-color);
+
+  --heading-two-font-size: 2rem;
+  --heading-two-line-height: 1.2em;
+  --heading-two-color: var(--text-color);
+
+  --heading-three-font-size: 1.5rem;
+  --heading-three-line-height: 1.2em;
+  --heading-three-color: var(--text-color);
+
+  --heading-four-font-size: 1rem;
+  --heading-four-line-height: 1.2em;
+  --heading-four-color: var(--text-color);
+
+  --heading-five-font-size: 1rem;
+  --heading-five-line-height: 1.2em;
+  --heading-five-color: #fbc400;
+
+  --heading-six-font-size: 1rem;
+  --heading-six-line-height: 1.2em;
+  --heading-six-color: #00bea7;
+
+  --text-font-size: 1rem;
+  --text-line-height: 1.8rem;
+  --text-font-weight: var(--primary-font-regular);
+  --text-color: #fff;
+  --text-color-contrast: #ffb703;
+  --text-color-contrast-alt: #00bea7;
+  --text-color-contrast-dark: #203746;
+  --text-paragraph-break: 1.8rem;
+
+  --quote-font-size: 1.5rem;
+  --quote-line-height: 1.2em;
+  --quote-color: var(--text-color);
+  --quote-color-contrast: #ce0061;
+  --quote-flourish: '“';
+  --quote-flourish-size: 140px;
+  --quote-flourish-space: 2.5rem;
+
+  --hr-flourish-color: #ce0061;
+  --hr-border-color: #ffb703;
+}

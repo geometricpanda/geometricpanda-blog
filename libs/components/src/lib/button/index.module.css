@@ -1,0 +1,53 @@
+.c-button {
+  --c-button-color: var(--interactive-primary);
+  --c-button-contrast: var(--interactive-primary-contrast);
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.c-button:after {
+  content: '';
+  position: absolute;
+  background-color: var(--c-button-contrast);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translate(var(--spacing-xs), var(--spacing-xs));
+  z-index: 0;
+}
+
+.c-button:active {
+  transform: translate(var(--spacing-xs), var(--spacing-xs));
+}
+
+.c-button:focus-visible {
+  outline-style: var(--outline-style);
+  outline-color: var(--outline-color);
+  outline-width: var(--outline-width);
+  outline-offset: var(--outline-offset);
+}
+
+.c-button--secondary {
+  --c-button-color: var(--interactive-secondary);
+  --c-button-contrast: var(--interactive-secondary-contrast);
+}
+
+.c-button__text {
+  display: block;
+  background-color: var(--c-button-color);
+  color: var(--c-button-contrast);
+  cursor: pointer;
+  border: 0;
+  line-height: 1em;
+  font-size: var(--interactive-font-size);
+  font-family: var(--interactive-font);
+  font-weight: var(--interactive-font-weight);
+  padding: var(--spacing-sm) var(--spacing-md)
+    calc(var(--spacing-sm) - var(--interactive-font-line-adjust));
+  z-index: 1;
+  position: relative;
+}
