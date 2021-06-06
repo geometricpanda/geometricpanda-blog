@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+.theme {
+  --grid-max-width: 50rem;
+  --grid-gutter: 1rem;
+  --grid-gap: 0.25rem;
 
-html {
-  font-size: 125%;
-}
-
-:root {
   --primary-font: 'Josefin Sans', sans-serif;
   --primary-font-regular: 300;
   --primary-font-bold: 500;
@@ -18,6 +16,8 @@ html {
   --outline-color: #00bea7;
   --outline-offset: 8px;
   --outline-style: solid;
+
+  --header-bg: #686868;
 
   --interactive-font-line-adjust: 4px;
   --interactive-font: var(--primary-font);
@@ -58,7 +58,7 @@ html {
   --heading-six-color: #00bea7;
 
   --text-font-size: 1rem;
-  --text-line-height: 1.8rem;
+  --text-line-height: 1.6rem;
   --text-font-weight: var(--primary-font-regular);
   --text-color: #fff;
   --text-color-contrast: #ffb703;
@@ -76,4 +76,8 @@ html {
 
   --hr-flourish-color: #ce0061;
   --hr-border-color: #ffb703;
+
+  --image-border-width: 4px;
+  --image-border-color: #00bea7;
+  --image-border-color-contrast: #ff76b7;
 }

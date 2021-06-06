@@ -8,7 +8,7 @@ export interface HeadingProps {
   date?: Date;
 }
 
-export const Heading: FC<HeadingProps> = ({
+export const PageHeader: FC<HeadingProps> = ({
   level: Element = 'h1',
   date,
   children,

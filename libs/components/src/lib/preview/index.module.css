@@ -1,0 +1,11 @@
+.c-preview {
+  display: grid;
+  column-gap: var(--grid-gutter);
+}
+
+@media (min-width: 500px) {
+  .c-preview {
+    column-gap: calc(var(--grid-gutter) * 2);
+    grid-template-columns: 1fr 4fr;
+  }
+}

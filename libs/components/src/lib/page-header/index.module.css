@@ -1,8 +1,8 @@
 .c-heading {
-  max-width: 600px;
-  margin: auto;
+  margin: auto auto calc(var(--text-paragraph-break) + var(--spacing-sm));
   display: flex;
   flex-direction: column-reverse;
+  max-width: 560px;
 }
 
 .c-heading__text-container {

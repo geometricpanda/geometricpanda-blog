@@ -1,4 +1,6 @@
 import { FC } from 'react';
-import './theme.css';
+import styles from './index.module.css';
 
-export const ThemeProvider: FC = ({ children }) => <>{children}</>;
+export const ThemeProvider: FC = ({ children }) => (
+  <div className={styles['theme']}>{children}</div>
+);

@@ -1,26 +1,30 @@
-import React from 'react';
-import { AppProps } from 'next/app';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { ReactComponent as NxLogo } from '../public/nx-logo-white.svg';
+import { AppProps } from 'next/app';
+
+import { ThemeProvider, Header } from '@geometricpanda/react-components';
+
 import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+const logo =
+  'https://images.ctfassets.net/b2wulskpf6cd/5YHEZFCqAzvEGC3peipE1z/0dd8348eb2acb22b9d7a0742e74cc33d/geometric-panda-logo.jpg';
+
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to blog!</title>
+        <title>Geometric Panda</title>
       </Head>
       <div className="app">
-        <header className="flex">
-          <NxLogo width="75" height="50" />
-          <h1>Welcome to blog!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
+        <ThemeProvider>
+          <Header logo={logo} />
+          <main className={'body'}>
+            <Component {...pageProps} />
+          </main>
+        </ThemeProvider>
       </div>
     </>
   );
 }
 
-export default CustomApp;
+export default App;

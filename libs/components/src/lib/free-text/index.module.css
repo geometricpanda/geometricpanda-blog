@@ -8,7 +8,16 @@
   display: grid;
 }
 
-.c-free-text strong {
+.c-free-text--narrow {
+  row-gap: calc(var(--text-paragraph-break) * 0.5);
+}
+
+.c-free-text p:first-child {
+  font-weight: var(--primary-font-bold);
+}
+
+.c-free-text strong,
+.c-free-text b {
   color: var(--text-color-contrast);
   font-weight: var(--primary-font-bold);
 }
@@ -79,11 +88,11 @@
 
 .c-free-text blockquote {
   position: relative;
+  margin: calc(var(--text-paragraph-break) * 0.5) auto;
   font-size: var(--quote-font-size);
   font-weight: var(--primary-font-bold);
   line-height: var(--quote-line-height);
   color: var(--quote-color);
-  margin: var(--text-paragraph-break) 0;
   padding-left: var(--quote-flourish-space);
 }
 
@@ -128,7 +137,7 @@
 .c-free-text hr {
   display: inline-block;
   background: var(--hr-flourish-color);
-  margin: var(--text-paragraph-break) auto;
+  margin: calc(var(--text-paragraph-break) * 0.5) auto;
   height: 16px;
   width: 16px;
   border: 0;

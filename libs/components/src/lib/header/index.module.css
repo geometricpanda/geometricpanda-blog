@@ -1,0 +1,25 @@
+.header {
+  background-color: var(--header-bg);
+}
+
+.header__masthead {
+  height: 60px;
+  background-size: 600px 400px;
+  background-position: center center;
+  background-image: url('hive.svg');
+}
+
+.header__body {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+.header__logo {
+  max-width: 150px;
+  margin: auto;
+}
+
+.header__links {
+}
