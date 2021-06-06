@@ -107,7 +107,9 @@ export const Image: FC<ImageProps> = ({
     if (!src) {
       return;
     }
+
     if (fixed) {
+
       setSrcM1x(getFixedSrcUrl(src, Density.Standard, width, height));
       setSrcM2x(getFixedSrcUrl(src, Density.Double, width, height));
       setSrcMW1x(getFixedSrcUrl(src, Density.Standard, width, height));
@@ -116,7 +118,9 @@ export const Image: FC<ImageProps> = ({
       setSrcT2x(getFixedSrcUrl(src, Density.Double, width, height));
       setSrcD1x(getFixedSrcUrl(src, Density.Standard, width, height));
       setSrcD2x(getFixedSrcUrl(src, Density.Double, width, height));
+
     } else {
+
       setSrcM1x(getFluidSrcUrl(src, Breakpoint.Mobile, width, height));
       setSrcM2x(getFluidSrcUrl(src, Breakpoint.Mobile_Retina, width, height));
       setSrcMW1x(getFluidSrcUrl(src, Breakpoint.Mobile_Wide, width, height));

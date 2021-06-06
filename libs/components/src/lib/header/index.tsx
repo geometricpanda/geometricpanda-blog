@@ -14,8 +14,8 @@ export const Header: FC<HeaderProps> = ({ logo }) => {
       <div className={styles.header__body}>
         <div className={styles.header__logo}>
           <Image
-            height={250}
-            width={250}
+            height={150}
+            width={150}
             alt={'logo'}
             src={logo}
             border={false}

@@ -12,7 +12,7 @@
   row-gap: calc(var(--text-paragraph-break) * 0.5);
 }
 
-.c-free-text p:first-child {
+.c-free-text--bold-paragraph p:first-child {
   font-weight: var(--primary-font-bold);
 }
 
