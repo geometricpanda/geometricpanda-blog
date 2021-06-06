@@ -1,0 +1,5 @@
+[build]
+command = "yarn nx export blog"
+publish = "./dist/apps/blog/exported/"
+
+

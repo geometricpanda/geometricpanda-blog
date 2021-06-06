@@ -4,7 +4,6 @@
 
 .header__masthead {
   height: 60px;
-  background-size: 600px 400px;
   background-position: center center;
   background-image: url('hive.svg');
 }
