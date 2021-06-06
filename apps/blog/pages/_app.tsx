@@ -6,8 +6,6 @@ import { ThemeProvider, Header } from '@geometricpanda/react-components';
 
 import './styles.css';
 
-const logo =
-  'https://images.ctfassets.net/b2wulskpf6cd/5YHEZFCqAzvEGC3peipE1z/0dd8348eb2acb22b9d7a0742e74cc33d/geometric-panda-logo.jpg';
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +15,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className="app">
         <ThemeProvider>
-          <Header logo={logo} />
+          <Header logo={'/logo.svg'} />
           <main className={'body'}>
             <Component {...pageProps} />
           </main>

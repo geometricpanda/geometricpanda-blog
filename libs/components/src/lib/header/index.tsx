@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import styles from './index.module.css';
 
-import { Image } from '../image';
-
 interface HeaderProps {
   logo: string;
 }
@@ -13,13 +11,11 @@ export const Header: FC<HeaderProps> = ({ logo }) => {
       <div className={styles.header__masthead} />
       <div className={styles.header__body}>
         <div className={styles.header__logo}>
-          <Image
+          <img
             height={150}
             width={150}
-            alt={'logo'}
+            alt={'Geometric Panda Logo'}
             src={logo}
-            border={false}
-            fixed
           />
         </div>
         <div className={styles.header__links}></div>
