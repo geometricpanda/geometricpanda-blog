@@ -13,12 +13,12 @@ interface ImageProps {
 }
 
 enum Breakpoint {
-  Mobile = 499,
-  Mobile_Retina = 998,
-  Mobile_Wide = 767,
-  Mobile_Wide_Retina = 1533,
+  Mobile = 400,
+  Mobile_Retina = 800,
+  Mobile_Wide = 600,
+  Mobile_Wide_Retina = 1200,
   Tablet = 768,
-  Tablet_Retina = 1535,
+  Tablet_Retina = 1536,
   Desktop = 1000,
   Desktop_Retina = 2000,
 }
@@ -43,6 +43,8 @@ const getFluidSrcUrl = (
   url.searchParams.set('h', h);
   url.searchParams.set('f', 'faces');
   url.searchParams.set('fit', 'thumb');
+  url.searchParams.set('fm', 'webp');
+  url.searchParams.set('q', '80');
 
   return url.toString();
 };
@@ -61,24 +63,24 @@ const getFixedSrcUrl = (
   url.searchParams.set('h', h);
   url.searchParams.set('f', 'faces');
   url.searchParams.set('fit', 'thumb');
+  url.searchParams.set('fm', 'webp');
+  url.searchParams.set('q', '80');
 
   return url.toString();
 };
 
-const getSrcSet = (img1x: string, img2x: string, breakpoint?: number): string =>
-  breakpoint
-    ? `${img1x} ${breakpoint}w, ${img2x} 2x`
-    : `${img1x} 1x, ${img2x} 2x`;
+const getSrcSet = (img1x: string, img2x: string): string =>
+  `${img1x}, ${img2x} 2x`;
 
 export const Image: FC<ImageProps> = ({
-  src,
-  width,
-  height,
-  alt,
-  mb,
-  fixed,
-  border = true,
-}) => {
+                                        src,
+                                        width,
+                                        height,
+                                        alt,
+                                        mb,
+                                        fixed,
+                                        border = true
+                                      }) => {
   const [aspectRatio, setAspectRatio] = useState<string>('1 / 1');
   const [srcM1x, setSrcM1x] = useState<string>('');
   const [srcM2x, setSrcM2x] = useState<string>('');
@@ -95,8 +97,8 @@ export const Image: FC<ImageProps> = ({
       {
         [styles['c-image--mb']]: mb,
         [styles['c-image--border-sm']]: border === 'sm',
-        [styles['c-image--border-off']]: !border,
-      },
+        [styles['c-image--border-off']]: !border
+      }
     ],
     [mb, border]
   );
@@ -118,9 +120,7 @@ export const Image: FC<ImageProps> = ({
       setSrcM1x(getFluidSrcUrl(src, Breakpoint.Mobile, width, height));
       setSrcM2x(getFluidSrcUrl(src, Breakpoint.Mobile_Retina, width, height));
       setSrcMW1x(getFluidSrcUrl(src, Breakpoint.Mobile_Wide, width, height));
-      setSrcMW2x(
-        getFluidSrcUrl(src, Breakpoint.Mobile_Wide_Retina, width, height)
-      );
+      setSrcMW2x(getFluidSrcUrl(src, Breakpoint.Mobile_Wide_Retina, width, height));
       setSrcT1x(getFluidSrcUrl(src, Breakpoint.Tablet, width, height));
       setSrcT2x(getFluidSrcUrl(src, Breakpoint.Tablet_Retina, width, height));
       setSrcD1x(getFluidSrcUrl(src, Breakpoint.Desktop, width, height));
@@ -133,17 +133,38 @@ export const Image: FC<ImageProps> = ({
     setAspectRatio(`1 / ${ratio}`);
   }, [width, height]);
 
-  if (!srcM1x) {
-    return null;
-  }
-
   return (
     <picture className={pictureClassName} style={{ aspectRatio }}>
-      <source srcSet={getSrcSet(srcD1x, srcD2x, 1000)} />
-      <source srcSet={getSrcSet(srcT1x, srcT2x, 768)} />
-      <source srcSet={getSrcSet(srcMW1x, srcMW2x, Breakpoint.Mobile_Wide)} />
-      <source srcSet={getSrcSet(srcM1x, srcM2x)} />
-      <img className={styles['c-image__img']} src={srcM1x} alt={alt} />
+
+      {srcD1x && srcD2x && (
+        <source
+          media={`(min-width: ${Breakpoint.Desktop}px)`}
+          srcSet={getSrcSet(srcD1x, srcD2x)} />
+      )}
+
+      {srcT1x && srcT2x && (
+        <source
+          media={`(min-width: ${Breakpoint.Tablet}px)`}
+          srcSet={getSrcSet(srcT1x, srcT2x)} />
+      )}
+
+      {srcMW1x && srcMW2x && (
+        <source
+          media={`(min-width: ${Breakpoint.Mobile_Wide}px)`}
+          srcSet={getSrcSet(srcMW1x, srcMW2x)} />
+      )}
+
+      {srcM1x && srcM2x && (
+        <>
+          <source srcSet={getSrcSet(srcM1x, srcM2x)} />
+          <img className={styles['c-image__img']}
+               width={width}
+               height={height}
+               src={srcM1x}
+               alt={alt} />
+        </>
+      )}
     </picture>
   );
 };
+

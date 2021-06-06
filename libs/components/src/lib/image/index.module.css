@@ -32,12 +32,11 @@
 }
 
 .c-image__img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   box-sizing: border-box;
   padding: var(--spacing-sm) 0 0 var(--spacing-sm);
   border: var(--image-border-width) solid var(--image-border-color);
-  display: block;
   vertical-align: middle;
 }
 
