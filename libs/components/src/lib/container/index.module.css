@@ -1,11 +1,13 @@
 .c-container {
-  display: grid;
+  display: flex;
   max-width: var(--grid-max-width);
   margin: auto;
   padding: 0 var(--grid-gutter);
   column-gap: var(--grid-gap);
 }
 
-.c-container--layout-single {
+.c-container__layout-single {
+  margin: auto;
+  flex-grow: 1;
   max-width: calc(var(--grid-max-width) * 0.75);
 }

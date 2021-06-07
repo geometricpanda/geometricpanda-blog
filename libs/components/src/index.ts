@@ -1,6 +1,7 @@
 export * from './lib/button';
 export * from './lib/button-link';
 export * from './lib/header';
+export * from './lib/header-links';
 export * from './lib/page-header';
 export * from './lib/free-text';
 export * from './lib/theme-provider';

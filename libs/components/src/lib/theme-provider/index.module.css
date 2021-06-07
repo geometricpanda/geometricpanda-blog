@@ -1,5 +1,5 @@
 .theme {
-  --grid-max-width: 50rem;
+  --grid-max-width: 64rem;
   --grid-gutter: 1rem;
   --grid-gap: 0.25rem;
 
@@ -17,7 +17,12 @@
   --outline-offset: 8px;
   --outline-style: solid;
 
-  --header-bg: #686868;
+  --header-bg: #555;
+  --heading-link-color: #fff;
+  --heading-link-font-size: 1.1rem;
+  --heading-link-font-weight: var(--primary-font-bold);
+  --heading-link-active-color: #fbc400;
+  --heading-link-underline-width: 3px;
 
   --interactive-font-line-adjust: 4px;
   --interactive-font: var(--primary-font);
