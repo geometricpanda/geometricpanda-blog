@@ -3,3 +3,8 @@ command = "yarn nx export blog"
 publish = "./dist/apps/blog/exported/"
 
 
+[[plugins]]
+package = "netlify-plugin-cache-nextjs"
+
+[plugins.inputs]
+build_dir_path = "./dist/apps/blog/"
