@@ -7,17 +7,12 @@ interface ContainerProps {
 }
 
 export const Container: FC<ContainerProps> = ({
-  children,
-  layout = 'single',
-}) => {
-  const leftClassNames = useClassNames(
-    [
-      {
-        [styles['c-container__layout-single']]: layout === 'single',
-      },
-    ],
-    [layout]
-  );
+                                                children,
+                                                layout = 'single'
+                                              }) => {
+  const leftClassNames = useClassNames([{
+    [styles['c-container__layout-single']]: layout === 'single'
+  }], [layout]);
 
   return (
     <div className={styles['c-container']}>
