@@ -1,4 +1,4 @@
-import { FC, forwardRef, useEffect, useState } from 'react';
+import { FC, forwardRef, useEffect, useMemo, useState } from 'react';
 import { useClassNames } from '../utils/useClassNames';
 import styles from './index.module.css';
 import { useRouter } from 'next/router';
@@ -12,33 +12,22 @@ interface HeaderLinkProps {
 
 export const HeaderLink: FC<HeaderLinkProps> =
   ({ children, href, ...props }) => {
-
-    const [isActive, setIsActive] = useState<boolean>(false);
     const router = useRouter();
+    const { asPath } = router;
 
-    const linkClassNames = useClassNames([
-      styles['c-header-link'],
-      {
-        [styles['c-header-link--active']]: isActive
-      }
-    ], [isActive]);
+    const isActive = (href === '/')
+      ? (asPath === href)
+      : asPath.includes(href);
 
-    const linkItemClassNames = useClassNames([
-      styles['c-header-link__item'],
-      {
-        [styles['c-header-link__item--active']]: isActive
-      }
-    ], [isActive]);
+    const linkClassNames = useClassNames([{
+      [styles['c-header-link']]: true,
+      [styles['c-header-link--active']]: isActive
+    }], [isActive]);
 
-    useEffect(() => {
-      const { asPath } = router;
-      if (href === '/') {
-        setIsActive(asPath === href);
-      } else {
-        setIsActive(asPath.includes(href));
-      }
-    }, [router, href]);
-
+    const linkItemClassNames = useClassNames([{
+      [styles['c-header-link__item']]: true,
+      [styles['c-header-link__item--active']]: isActive
+    }], [isActive]);
 
     return (
       <li className={linkClassNames}>
