@@ -5,7 +5,7 @@ export const useClassNames = (
   cssObject: Argument[],
   dependencies: Array<unknown>
 ) => {
-  const [cssClassNames, setCssClassNames] = useState<string>('');
+  const [cssClassNames, setCssClassNames] = useState<string>(classNames(cssObject));
 
   useEffect(() => {
     setCssClassNames(classNames(cssObject));
