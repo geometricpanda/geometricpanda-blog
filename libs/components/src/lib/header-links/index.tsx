@@ -1,4 +1,4 @@
-import { FC, forwardRef, useEffect, useMemo, useState } from 'react';
+import { FC } from 'react';
 import { useClassNames } from '../utils/useClassNames';
 import styles from './index.module.css';
 import { useRouter } from 'next/router';

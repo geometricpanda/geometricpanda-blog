@@ -2,8 +2,6 @@ import { FC } from 'react';
 import styles from './index.module.css';
 import { Container } from '../container';
 
-import { HeaderLinks } from '../header-links';
-
 interface HeaderProps {
   logo: string;
 }

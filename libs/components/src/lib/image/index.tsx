@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import styles from './index.module.css';
 import { useClassNames } from '../utils/useClassNames';
 
