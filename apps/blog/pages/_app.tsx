@@ -24,7 +24,7 @@ function App({ Component, pageProps }: AppProps) {
                 <HeaderLink>Blog</HeaderLink>
               </Link>
               <Link href={'https://www.github.com/geometricpanda'} passHref>
-                <HeaderLink target='_blank' title={'Github (opens in new window'}>GitHub</HeaderLink>
+                <HeaderLink target='_blank' rel={'noopener'} title={'Github (opens in new window'}>GitHub</HeaderLink>
               </Link>
             </HeaderLinks>
           </Header>
