@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { format, formatISO } from 'date-fns';
 
 import styles from './index.module.css';
@@ -13,18 +13,9 @@ export const PageHeader: FC<HeadingProps> = ({
   date,
   children,
 }) => {
-  const [dateStr, setDateStr] = useState<string>(null);
-  const [dateIso, setDateIso] = useState<string>(null);
+  const dateStr = date ? format(date, 'do MMMM yyyy') : null;
 
-  useEffect(() => {
-    if (date) {
-      setDateStr(format(date, 'do MMMM yyyy'));
-      setDateIso(formatISO(date));
-    } else {
-      setDateStr(null);
-      setDateIso(null);
-    }
-  }, [date]);
+  const dateIso = date ? formatISO(date) : null;
 
   return (
     <div className={styles['c-heading']}>

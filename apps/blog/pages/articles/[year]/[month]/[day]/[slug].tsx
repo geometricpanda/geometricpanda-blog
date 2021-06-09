@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { formatISO, parse } from 'date-fns';
 
