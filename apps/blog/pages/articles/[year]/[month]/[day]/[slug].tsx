@@ -6,14 +6,14 @@ import {
   Container,
   FreeText,
   Image,
-  PageHeader,
+  PageHeader
 } from '@geometricpanda/react-components';
 
 import type { Article } from '../../../../../contentful/interface';
 
 import {
   getArticle,
-  getArticleSlugs,
+  getArticleSlugs
 } from '../../../../../contentful/articles';
 
 import { getFullSlugFromArticle } from '../../../../../lib/get-full-slug-from-article';
@@ -28,8 +28,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      article: article,
-    },
+      article: article
+    }
   };
 }
 
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
   const articleSlugs = await getArticleSlugs();
   return {
     paths: articleSlugs.map((item) => getFullSlugFromArticle(item)),
-    fallback: false,
+    fallback: false
   };
 }
 
@@ -52,11 +52,13 @@ const Page: FC<PageProps> = ({ article }) => {
   const title = article.title;
   const heroImg = article.hero.url;
   const heroAlt = article.hero.title;
+  const metaDescription = article.metaDescription;
 
   return (
     <>
       <Head>
         <title>{title} | Geometric Panda</title>
+        <meta name='description' content={metaDescription} />
       </Head>
       <Container>
         <article>
@@ -67,6 +69,6 @@ const Page: FC<PageProps> = ({ article }) => {
       </Container>
     </>
   );
-};
+}
 
 export default Page;

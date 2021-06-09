@@ -87,6 +87,7 @@ export async function getArticle(date, slug): Promise<Article> {
           url,
         },
         title,
+        metaDescription,
         slug,
         intro {
           json

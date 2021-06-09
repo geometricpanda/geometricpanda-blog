@@ -9,6 +9,7 @@ export interface Article {
     firstPublishedAt: string;
   };
   title: string;
+  metaDescription: string;
   slug: string;
   intro: {
     json: Document;
