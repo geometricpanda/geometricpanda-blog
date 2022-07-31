@@ -37,6 +37,7 @@ export const Sidenav: FC<SidenavProps> = ({
 
   const options: Options = {
     preventScroll: true,
+    allowOutsideClick: true,
   }
 
   return (
