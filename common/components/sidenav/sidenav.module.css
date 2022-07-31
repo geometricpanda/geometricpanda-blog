@@ -120,4 +120,5 @@
 .link__icon {
     font-size: 0.8em;
     margin-bottom: 4px;
+    min-width: 24px;
 }
