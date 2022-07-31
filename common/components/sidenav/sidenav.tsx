@@ -1,5 +1,5 @@
 import {FC, useEffect, useRef} from 'react';
-import ScrollLock from 'react-scrolllock';
+import ScrollLock, {TouchScrollable} from 'react-scrolllock';
 import FocusTrap from 'focus-trap-react';
 import {Options} from 'focus-trap';
 import Link from 'next/link';
@@ -47,10 +47,11 @@ export const Sidenav: FC<SidenavProps> = ({
              [styles['sidenav-backdrop']]: true,
              [styles['sidenav-backdrop--expanded']]: navigationExpanded,
            })}/>
-
+      <ScrollLock isActive={navigationExpanded}/>
       <FocusTrap active={navigationExpanded} focusTrapOptions={options}>
         <div>
-          <ScrollLock isActive={navigationExpanded}>
+          <TouchScrollable>
+
 
             <nav id={navigationId}
                  aria-hidden={ariaHidden}
@@ -97,7 +98,7 @@ export const Sidenav: FC<SidenavProps> = ({
                 ))}
               </ul>
             </nav>
-          </ScrollLock>
+          </TouchScrollable>
         </div>
       </FocusTrap>
     </>
