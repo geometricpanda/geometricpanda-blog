@@ -1,0 +1,123 @@
+.sidenav-backdrop {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    opacity: 0;
+    transition-duration: var(--transition-time-fast);
+    transition-timing-function: linear;
+    transition-property: opacity, background-color, backdrop-filter;
+    pointer-events: none;
+}
+
+.sidenav-backdrop--expanded {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    pointer-events: all;
+}
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: var(--color-dark-magenta);
+    width: calc(100vw - 44px);
+    max-width: 380px;
+    max-height: 100vh;
+
+    pointer-events: none;
+    box-shadow: 0 4px 8px var(--color-black);
+
+    opacity: 0;
+    transition-duration: var(--transition-time-fast);
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transform: translateX(-100%);
+    padding: 16px;
+    overflow: auto;
+}
+
+.sidenav::-webkit-scrollbar {
+    background-color: var(--color-dark-magenta);
+    width: 6px;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+    border-radius: 20px;
+}
+
+.sidenav--expanded {
+    opacity: 1;
+    pointer-events: unset;
+    transform: translateX(0);
+}
+
+
+.sidenav__close {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.sidenav__close-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid white;
+}
+
+.sidenav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.link {
+    color: var(--color-white);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-T300);
+    text-decoration: none;
+    transition: color var(--transition-time-fast) linear;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-height: 44px;
+    max-width: 100%;
+    padding: 6px 6px 3px;
+    margin: -6px -6px -3px;
+}
+
+.link--active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.link:hover {
+    color: var(--color-light-yellow);
+}
+
+.link:focus {
+    box-shadow: var(--focus-box-shadow);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.link__icon {
+    font-size: 0.8em;
+    margin-bottom: 4px;
+}

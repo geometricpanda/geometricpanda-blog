@@ -1,0 +1,42 @@
+.hex-separator {
+    height: 50px;
+    background-size: 50px 50px;
+    background-position-y: -18px;
+    background-repeat: repeat-x;
+}
+
+.hex-separator--color-black {
+    background-image: url('../../../public/hexagons/black.svg');
+}
+
+.hex-separator--color-dark-blue {
+    background-image: url('../../../public/hexagons/dark-blue.svg');
+}
+
+.hex-separator--color-dark-teal {
+    background-image: url('../../../public/hexagons/dark-teal.svg');
+}
+
+.hex-separator--color-dark-magenta {
+    background-image: url('../../../public/hexagons/dark-magenta.svg');
+}
+
+.hex-separator--color-grey {
+    background-image: url('../../../public/hexagons/grey.svg');
+}
+
+.hex-separator--bleed-dark-blue {
+    background-color: var(--color-dark-blue);
+}
+
+.hex-separator--bleed-dark-teal {
+    background-color: var(--color-dark-teal);
+}
+
+.hex-separator--bleed-dark-magenta {
+    background-color: var(--color-dark-magenta);
+}
+
+.hex-separator--bleed-black {
+    background-color: var(--color-black);
+}

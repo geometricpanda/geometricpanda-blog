@@ -3,17 +3,17 @@ import Head from 'next/head';
 import {HexSeparator} from '../common/components/hex-separator';
 import {Container} from '../common/components/container';
 
-const Home: NextPage = () => (
+const Links: NextPage = () => (
   <>
     <Head>
-      <title>Home • Blog • Geometric Panda</title>
+      <title>Links • Blog • Geometric Panda</title>
     </Head>
     <HexSeparator hexColor={'grey'} bleedColor={'dark-teal'}/>
     <Container>
-      <h1>Home</h1>
+      <h1>Links</h1>
     </Container>
   </>
 )
 
 
-export default Home
+export default Links

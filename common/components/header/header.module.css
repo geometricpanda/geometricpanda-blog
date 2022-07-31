@@ -1,0 +1,108 @@
+.header {
+    background-color: var(--color-grey);
+    background-image: url('../../../public/damask.svg');
+    background-repeat: repeat-x;
+    background-position: 0 -258px;
+    padding-top: 47px;
+    display: block;
+}
+
+.header__container {
+    display: grid;
+    padding-top: 5px;
+    grid-template-columns: auto 100px;
+    grid-template-areas: 'hamburger logo';
+}
+
+.header__logo {
+    grid-area: logo;
+}
+
+.header__hamburger {
+    grid-area: hamburger;
+    display: flex;
+    align-items: center;
+}
+
+.header__hamburger-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid white;
+}
+
+
+.header__hamburger-button:focus {
+    box-shadow: var(--focus-box-shadow);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.header__links {
+    grid-area: links;
+    display: none;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0 0 0;
+    list-style: none;
+    gap: 32px;
+}
+
+
+.link {
+    display: flex;
+    color: #E0E9F1;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-T300);
+    text-decoration: none;
+    gap: var(--spacing-sm);
+    transition: color var(--transition-time-fast) linear;
+    padding: 6px 6px 3px;
+    margin: -6px -6px -3px;
+    align-items: center;
+}
+
+.link--img {
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.link--active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.link:hover {
+    color: var(--color-light-yellow);
+}
+
+.link:focus {
+    box-shadow: var(--focus-box-shadow);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.link__icon {
+    font-size: 0.8em;
+    margin-bottom: 4px;
+}
+
+@media (min-width: 48em) {
+    .header__container {
+        grid-template-areas: 'links logo';
+    }
+
+    .header__hamburger {
+        display: none;
+    }
+
+    .header__links {
+        display: flex;
+    }
+}

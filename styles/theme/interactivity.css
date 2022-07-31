@@ -1,0 +1,15 @@
+:root {
+    --focus-box-shadow:
+            0 0 0 2px var(--color-light-yellow),
+            0 0 0 4px var(--color-magenta);
+    --focus-outline: 2px solid transparent;
+    --focus-outline-offset: 2px;
+
+    --transition-time-fast: 150ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-time-fast: 0;
+    }
+}
