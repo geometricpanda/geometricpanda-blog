@@ -50,7 +50,7 @@ export const Sidenav: FC<SidenavProps> = ({
 
       <FocusTrap active={navigationExpanded} focusTrapOptions={options}>
         <div>
-          <ScrollLock>
+          <ScrollLock isActive={navigationExpanded}>
 
             <nav id={navigationId}
                  aria-hidden={ariaHidden}
