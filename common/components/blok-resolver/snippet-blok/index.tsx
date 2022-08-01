@@ -15,13 +15,11 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => (
   <Container>
     <div className={styles['snippet-blok']}>
       <div className={styles['snippet-blok__contents']}>
-        <div className={styles['snippet-blok__header']}>
-          <div className={styles['snippet-blok__filename']}>
-            {blok.filename}
-          </div>
-          <div className={styles['snippet-blok__language']}>
-            {blok.language}
-          </div>
+        <div className={styles['snippet-blok__filename']}>
+          {blok.filename}
+        </div>
+        <div className={styles['snippet-blok__language']}>
+          {blok.language}
         </div>
         <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
              dangerouslySetInnerHTML={{__html: blok.code}}/>
