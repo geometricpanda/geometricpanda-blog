@@ -11,24 +11,25 @@
     transform: skew(calc(var(--skew) * -1));
 }
 
-.snippet-blok:before {
+.snippet-blok:before,
+.snippet-blok:after {
     position: absolute;
-    right: 4px;
-    top: 6px;
+    content: '';
+    pointer-events: none;
     height: 50%;
     width: 50%;
-    content: '';
+}
+
+.snippet-blok:before {
+    right: 4px;
+    top: 6px;
     border-top: 3px solid var(--color-purple);
     border-right: 3px solid var(--color-purple);
 }
 
 .snippet-blok:after {
-    position: absolute;
     left: 4px;
     bottom: 6px;
-    height: 50%;
-    width: 50%;
-    content: '';
     border-left: 3px solid var(--color-purple);
     border-bottom: 3px solid var(--color-purple);
 }
