@@ -52,12 +52,13 @@
     padding: 0 0 0;
     list-style: none;
     gap: 32px;
+    background-color: var(--color-grey);
 }
 
 
 .link {
     display: flex;
-    color: #E0E9F1;
+    color: var(--color-off-white);
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-T300);
     text-decoration: none;

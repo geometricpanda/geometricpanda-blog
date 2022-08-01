@@ -24,19 +24,3 @@
 .hex-separator--color-grey {
     background-image: url('../../../public/hexagons/grey.svg');
 }
-
-.hex-separator--bleed-dark-blue {
-    background-color: var(--color-dark-blue);
-}
-
-.hex-separator--bleed-dark-teal {
-    background-color: var(--color-dark-teal);
-}
-
-.hex-separator--bleed-dark-magenta {
-    background-color: var(--color-dark-magenta);
-}
-
-.hex-separator--bleed-black {
-    background-color: var(--color-black);
-}

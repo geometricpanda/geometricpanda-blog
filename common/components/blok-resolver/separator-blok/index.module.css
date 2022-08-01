@@ -1,0 +1,41 @@
+.separator {
+    display: block;
+    border: 10px solid var(--color-light-yellow);
+    width: 0;
+    height: 0;
+    transform: rotate(0.125turn);
+    overflow: visible;
+    margin: var(--spacing-lg) auto;
+}
+
+.separator:before,
+.separator:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--color-magenta);
+}
+
+.separator:before {
+    transform: rotate(-0.125turn) translateY(-36px) translateX(-121px)
+}
+
+.separator:after {
+    transform: rotate(-0.125turn) translateY(-39px) translateX(57px);
+}
+
+@media (min-width: 48em) {
+    .separator:before,
+    .separator:after {
+        width: 200px;
+    }
+
+    .separator:before {
+        transform: rotate(-0.125turn) translateY(-71px) translateX(-205px);
+    }
+
+    .separator:after {
+        transform: rotate(-0.125turn) translateY(-74px) translateX(72px);
+    }
+}

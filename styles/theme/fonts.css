@@ -6,9 +6,15 @@
     --font-weight-heavy: 700;
 
     --font-size-T200: 1rem;
+    --line-height-T200: 1em;
     --font-size-T300: 1.25rem;
+    --line-height-T300: 1.7em;
     --font-size-T400: 1.5rem;
-    --font-size-T500: 2.5rem;
-    --font-size-T600: 2.75rem;
+    --line-height-T400: 1.3em;
+    --font-size-T500: 1.7rem;
+    --line-height-T500: 1.3em;
+    --font-size-T600: 2.5rem;
+    --line-height-T600: 1.3em;
     --font-size-T700: 3rem;
+    --line-height-T700: 1.2em;
 }

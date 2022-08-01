@@ -6,6 +6,8 @@ import {Container} from '../container';
 import {VisuallyHidden} from '../visually-hidden';
 import Link from 'next/link';
 import clsx from 'clsx';
+import {HexSeparator} from '../hex-separator';
+import {Color} from '../../../helpers/bloks.interface';
 
 export interface FooterProps {
   links: Array<ILink>;
@@ -19,6 +21,7 @@ export const Footer: FC<FooterProps> = ({
   <footer
     className={styles['footer']}
     aria-hidden={ariaHidden}>
+    <HexSeparator color={Color.DARK_TEAL}/>
 
     <Container>
       <nav className={styles['footer__nav']}>

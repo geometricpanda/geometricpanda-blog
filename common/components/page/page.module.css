@@ -4,11 +4,12 @@
     min-height: 100vh;
 }
 
-.page__body {
+.page__content {
     flex-grow: 1;
+    padding-bottom: 4rem;
 }
 
-.page__footer {
+.page__decoration {
     background-image: url('../../../public/damask.svg');
     background-color: var(--color-black);
 }

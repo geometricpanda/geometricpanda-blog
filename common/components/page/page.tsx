@@ -8,6 +8,7 @@ import {Footer} from '../footer';
 import {HexSeparator} from '../hex-separator';
 
 import styles from './page.module.css';
+import {Color} from '../../../helpers/bloks.interface';
 
 export interface PageProps {
   children: ReactNode;
@@ -25,12 +26,11 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
     useEffect(() => {
       const path = router.asPath;
 
-      setLinks(links => links.map(link =>
-        (path === '/')
-          ? {...link, active: link.href === path}
-          : {
-            ...link, active: link.href.includes(path),
-          }),
+      setLinks(links => links.map(link => {
+          return (link.href === '/')
+            ? {...link, active: link.href === path}
+            : {...link, active: path.includes(link.href)}
+        }),
       );
 
       setNavigationExpanded(false);
@@ -56,18 +56,16 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
           navigationId={navigationId}
           navigationExpanded={navigationExpanded}/>
 
-        <main className={styles['page__body']}
+        <main className={styles['page__content']}
               aria-hidden={navigationExpanded || undefined}>
           {children}
         </main>
 
+        <Footer links={links}
+                aria-hidden={navigationExpanded || undefined}/>
 
-        <div className={styles['page__footer']}>
-          <HexSeparator hexColor={'dark-teal'} bleedColor={'dark-magenta'}/>
-          <Footer links={links}
-                  aria-hidden={navigationExpanded || undefined}/>
-
-          <HexSeparator hexColor={'dark-magenta'}/>
+        <div className={styles['page__decoration']}>
+          <HexSeparator color={Color.DARK_MAGENTA}/>
         </div>
 
       </div>

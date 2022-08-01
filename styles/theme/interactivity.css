@@ -6,10 +6,12 @@
     --focus-outline-offset: 2px;
 
     --transition-time-fast: 150ms;
+    --transition-time-medium: 300ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
     :root {
         --transition-time-fast: 0;
+        --transition-time-medium: 0;
     }
 }

@@ -28,7 +28,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
     color: var(--color-white);
-    padding: 0 0 var(--spacing-lg)  ;
+    padding: 0 0 var(--spacing-2xl);
 }
 
 .link {

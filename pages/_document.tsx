@@ -3,8 +3,9 @@ import Document, {Html, Head, Main, NextScript} from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
-        <Head>
+      <Html lang="en-gb">
+      <Head>
+          <base href='/'/>
           <link rel="icon" type="image/png" sizes="32x32" href="/favicons/32.png"/>
           <link rel="icon" type="image/png" sizes="16x16" href="/favicons/16.png"/>
           <link rel="icon" type="image/png" sizes="48x48" href="/favicons/48.png"/>
