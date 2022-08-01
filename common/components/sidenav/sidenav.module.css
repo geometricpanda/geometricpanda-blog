@@ -3,16 +3,20 @@
     position: fixed;
     inset: 0;
     z-index: 998;
-    transition-duration: var(--transition-time-fast);
-    transition-timing-function: ease-in-out;
-    transition-property: backdrop-filter;
-    pointer-events: none;
+    animation: blurIn var(--transition-time-medium);
+    animation-fill-mode: forwards;
 }
 
-.sidenav-backdrop--expanded {
-    pointer-events: all;
-    backdrop-filter: blur(5px);
+@keyframes blurIn {
+    0% {
+        backdrop-filter: blur(0) saturate(1);
+    }
+    100% {
+        backdrop-filter: blur(5px) saturate(0.5);
+    }
+
 }
+
 
 .sidenav {
     position: fixed;
@@ -24,16 +28,24 @@
     width: calc(100vw - 88px);
     max-width: 380px;
     max-height: 100vh;
-
-    pointer-events: none;
-
-    transition-duration: var(--transition-time-fast);
-    transition-timing-function: linear;
-    transition-property: transform;
-    transform: translateX(-100%);
+    animation: slideIn var(--transition-time-medium);
+    animation-fill-mode: forwards;
     padding: 16px;
     overflow: auto;
+    box-shadow: 0 4px 8px var(--color-black);
 }
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
 
 .sidenav::-webkit-scrollbar {
     background-color: var(--color-dark-magenta);
@@ -43,12 +55,6 @@
 .sidenav::-webkit-scrollbar-thumb {
     background: var(--color-white);
     border-radius: 20px;
-}
-
-.sidenav--expanded {
-    pointer-events: unset;
-    transform: translateX(0);
-    box-shadow: 0 4px 8px var(--color-black);
 }
 
 

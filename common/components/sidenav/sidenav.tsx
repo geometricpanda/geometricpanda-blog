@@ -14,26 +14,17 @@ import styles from './sidenav.module.css';
 export interface SidenavProps {
   links: Array<ILink>;
   navigationId: string;
-  navigationExpanded: boolean;
   onNavigationChange: (state: boolean) => void;
-  'aria-hidden': true | undefined;
 }
 
 export const Sidenav: FC<SidenavProps> = ({
   links,
   navigationId,
-  navigationExpanded,
   onNavigationChange,
-  'aria-hidden': ariaHidden,
 }) => {
 
   const closeButton = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (navigationExpanded) {
-      closeButton.current?.focus();
-    }
-  }, [navigationExpanded]);
 
   const options: Options = {
     preventScroll: true,
@@ -43,22 +34,14 @@ export const Sidenav: FC<SidenavProps> = ({
   return (
     <>
       <div onClick={() => onNavigationChange(false)}
-           className={clsx({
-             [styles['sidenav-backdrop']]: true,
-             [styles['sidenav-backdrop--expanded']]: navigationExpanded,
-           })}/>
-      <ScrollLock isActive={navigationExpanded}/>
-      <FocusTrap active={navigationExpanded} focusTrapOptions={options}>
+           className={styles['sidenav-backdrop']}/>
+      <FocusTrap focusTrapOptions={options}>
         <div>
-          <TouchScrollable>
-
-
+          <ScrollLock>
             <nav id={navigationId}
-                 aria-hidden={ariaHidden}
                  aria-describedby={'navigation-title'}
                  className={clsx({
                    [styles['sidenav']]: true,
-                   [styles['sidenav--expanded']]: navigationExpanded,
                  })}>
 
               <VisuallyHidden id={'navigation-title'}>
@@ -67,12 +50,11 @@ export const Sidenav: FC<SidenavProps> = ({
 
               <div className={styles['sidenav__close']}>
                 <button
-                  tabIndex={navigationExpanded ? undefined : -1}
                   ref={closeButton}
                   className={styles['sidenav__close-button']}
                   aria-label={'Close Menu'}
                   aria-controls={navigationId}
-                  aria-expanded={navigationExpanded}
+                  aria-expanded={true}
                   onClick={() => onNavigationChange(false)}>
                   <FontAwesomeIcon icon={faTimes}/>
                 </button>
@@ -84,7 +66,6 @@ export const Sidenav: FC<SidenavProps> = ({
                       key={link.text + link.href}>
                     <Link href={link.href} passHref>
                       <a
-                        tabIndex={navigationExpanded ? undefined : -1}
                         aria-current={link.active ? 'page' : undefined}
                         className={clsx({
                           [styles['link']]: true,
@@ -98,7 +79,7 @@ export const Sidenav: FC<SidenavProps> = ({
                 ))}
               </ul>
             </nav>
-          </TouchScrollable>
+          </ScrollLock>
         </div>
       </FocusTrap>
     </>

@@ -25,14 +25,12 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
 
     useEffect(() => {
       const path = router.asPath;
-
       setLinks(links => links.map(link => {
           return (link.href === '/')
             ? {...link, active: link.href === path}
             : {...link, active: path.includes(link.href)}
         }),
       );
-
       setNavigationExpanded(false);
     }, [router.asPath])
 
@@ -42,12 +40,12 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
 
     return (
       <div className={styles['page']}>
-        <Sidenav
-          links={links}
-          aria-hidden={!navigationExpanded || undefined}
-          onNavigationChange={onNavigationChange}
-          navigationExpanded={navigationExpanded}
-          navigationId={navigationId}/>
+        {navigationExpanded && (
+          <Sidenav
+            links={links}
+            onNavigationChange={onNavigationChange}
+            navigationId={navigationId}/>
+        )}
 
         <Header
           links={links}
