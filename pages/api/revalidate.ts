@@ -17,12 +17,13 @@ const handler = async (
   }
 
   const {story_id} = req.body;
-  console.log(story_id);
+
   try {
     const story = await Storyblok.getStory(story_id);
     const {full_slug} = story.data.story;
-    await res.revalidate(`/${full_slug}`)
-    return res.json({revalidated: true})
+    await res.revalidate(`/${full_slug}`);
+    await Storyblok.flushCache();
+    return res.json({revalidated: true});
   } catch (e) {
     return res.status(500).send('Error revalidating')
   }
