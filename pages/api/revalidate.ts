@@ -1,7 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import {Storyblok} from '../../helpers/storyblock-client';
-import {StoryData} from 'storyblok-js-client';
-import exp from 'constants';
 
 const {
   CACHE_REVALIDATE_TOKEN,

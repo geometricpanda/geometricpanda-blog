@@ -23,6 +23,6 @@ const MyApp: FC<AppProps> = ({Component, pageProps}) => (
   <Page initialLinks={initialLinks}>
     <Component {...pageProps} />
   </Page>
-)
+);
 
 export default MyApp

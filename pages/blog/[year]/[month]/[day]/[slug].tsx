@@ -1,14 +1,17 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
+import {useStoryblokBridge} from '@storyblok/js';
+import Head from 'next/head';
+import {useRouter} from 'next/router';
 import {ParsedUrlQuery} from 'querystring';
 
 import {BlogStaticProps, getBlogStaticProps} from '../../../../../helpers/static-props';
 import {BlokResolver} from '../../../../../common/components/blok-resolver';
 import {getBlogStaticPaths} from '../../../../../helpers/static-paths';
 
-import Head from 'next/head';
 
 interface BlogPage {
-  blog: BlogStaticProps;
+  story: BlogStaticProps;
+  preview: boolean;
 }
 
 interface StaticParams extends ParsedUrlQuery {
@@ -27,28 +30,38 @@ export const getStaticPaths: GetStaticPaths<StaticParams> = async () => {
 }
 
 
-export const getStaticProps: GetStaticProps<BlogPage> = async ({params}) => {
+export const getStaticProps: GetStaticProps<BlogPage> = async ({params, preview}) => {
   const slug = params!.slug as string;
   const year = params!.year as string;
   const month = params!.month as string;
   const day = params!.day as string;
-  const blog = await getBlogStaticProps(`${year}/${month}/${day}/${slug}`);
+  const story = await getBlogStaticProps(`${year}/${month}/${day}/${slug}`, preview);
+
   return {
     props: {
-      blog,
+      story,
+      preview: !!preview,
     },
   }
 }
 
 
-export const page: NextPage<BlogPage> = ({blog}) => {
-  const title = `${blog.content.title} • Blog • Geometric Panda`
+export const page: NextPage<BlogPage> = ({story, preview}) => {
+
+  if (preview) {
+    /* eslint-disable react-hooks/rules-of-hooks */
+    const router = useRouter();
+    useStoryblokBridge(story.id, () => router.reload());
+    /* eslint-enable react-hooks/rules-of-hooks */
+  }
+
+  const title = `${story.content.title} • Blog • Geometric Panda`
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <BlokResolver story={blog}/>
+      <BlokResolver story={story}/>
     </>
   )
 }

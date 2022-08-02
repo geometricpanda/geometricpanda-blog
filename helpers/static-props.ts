@@ -13,8 +13,9 @@ export interface BlogProps extends Bloks {
 }
 
 export type BlogStaticProps = StoryData<BlogProps>;
-export const getBlogStaticProps = async (slug: string): Promise<BlogStaticProps> => {
-  const {data} = await Storyblok.getStory(`blog/${slug}`)
+export const getBlogStaticProps = async (slug: string, preview = false): Promise<BlogStaticProps> => {
+  const version = preview ? 'draft' : 'published';
+  const {data} = await Storyblok.getStory(`blog/${slug}`, {version})
   const story = data.story as unknown as BlogStaticProps;
   const body = story.content.body.map((blok: BlokComponent) => blokResolver(blok));
   return {
