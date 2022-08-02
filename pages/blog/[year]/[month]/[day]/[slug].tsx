@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps<BlogPage> = async ({params, preview}
   return {
     props: {
       story,
-      preview: !!preview,
+      preview: true,
     },
   }
 }
@@ -48,10 +48,10 @@ export const getStaticProps: GetStaticProps<BlogPage> = async ({params, preview}
 
 export const page: NextPage<BlogPage> = ({story, preview}) => {
 
-  if (preview) {
+  if (preview && typeof window !== "undefined") {
     /* eslint-disable react-hooks/rules-of-hooks */
     const router = useRouter();
-    useStoryblokBridge(story.id, () => router.reload());
+    useStoryblokBridge(story.id, () => router.replace(router.asPath, router.asPath, {scroll: false}));
     /* eslint-enable react-hooks/rules-of-hooks */
   }
 

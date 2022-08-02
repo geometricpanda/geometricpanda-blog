@@ -2,13 +2,13 @@ import {FC} from 'react';
 import clsx from 'clsx';
 
 import {SnippetComponentBlok} from '../../../../helpers/bloks.interface';
-import {BlockResolverComponentProps} from '../block-resolver.interface';
+import {BlokResolverComponentProps} from '../block-resolver.interface';
 import {Container} from '../../container';
 
 import 'prismjs/themes/prism-okaidia.css';
 import styles from './index.module.css';
 
-export interface SnippetBlokProps extends BlockResolverComponentProps<SnippetComponentBlok> {
+export interface SnippetBlokProps extends BlokResolverComponentProps<SnippetComponentBlok> {
 }
 
 export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => (

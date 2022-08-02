@@ -1,13 +1,13 @@
 import {FC, MouseEventHandler, useCallback, useEffect, useRef} from 'react';
 import {TextComponentBlok} from '../../../../helpers/bloks.interface';
-import {BlockResolverComponentProps} from '../block-resolver.interface';
+import {BlokResolverComponentProps} from '../block-resolver.interface';
 
 import styles from './index.module.css';
 import {useEvent} from 'react-use';
 import {useRouter} from 'next/router';
 import {Container} from '../../container';
 
-export interface TextBlokProps extends BlockResolverComponentProps<TextComponentBlok> {
+export interface TextBlokProps extends BlokResolverComponentProps<TextComponentBlok> {
 }
 
 export const TextBlok: FC<TextBlokProps> = ({blok}) => {

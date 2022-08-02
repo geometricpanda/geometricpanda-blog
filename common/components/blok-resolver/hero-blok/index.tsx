@@ -3,13 +3,13 @@ import {format} from 'date-fns';
 import clsx from 'clsx';
 
 
-import {BlockResolverComponentProps} from '../block-resolver.interface';
+import {BlokResolverComponentProps} from '../block-resolver.interface';
 import {Color, HeroComponentBlok} from '../../../../helpers/bloks.interface';
 import styles from './index.module.css';
 import {HexSeparator} from '../../hex-separator';
 import {Container} from '../../container';
 
-export interface HeroBlokProps extends BlockResolverComponentProps<HeroComponentBlok> {
+export interface HeroBlokProps extends BlokResolverComponentProps<HeroComponentBlok> {
 }
 
 export const HeroBlok: FC<HeroBlokProps> = ({blok, story}) => {

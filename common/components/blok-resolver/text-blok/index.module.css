@@ -109,3 +109,15 @@
     line-height: var(--line-height-T400);
     font-weight: var(--font-weight-light);
 }
+
+.text-blok__content code {
+    font-size: var(--font-size-T200);
+    line-height: var(--line-height-T200);
+    background-color: var(--color-magenta-grey);
+    color: var(--color-white);
+    font-weight: var(--font-weight-light);
+    padding: 4px 6px 6px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 4px;
+}

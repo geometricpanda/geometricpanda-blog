@@ -8,6 +8,7 @@ import {HeroBlok} from './hero-blok';
 import styles from './blok-resolver.module.css';
 import {StoryData} from 'storyblok-js-client';
 import {Bloks} from '../../../helpers/static-props';
+import {AssetsBlok} from './assets-blok';
 
 interface BlockResolverProps {
   story: StoryData<Bloks>,
@@ -26,6 +27,8 @@ export const BlokResolver: FC<BlockResolverProps> = ({story}) => {
         return <SeparatorBlok key={blok._uid} story={story} blok={blok}/>
       case BLOK.HERO:
         return <HeroBlok key={blok._uid} story={story} blok={blok}/>
+      case BLOK.ASSET:
+        return <AssetsBlok key={blok._uid} blok={blok} story={story}/>
       default:
         return null;
     }

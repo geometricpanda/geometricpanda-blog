@@ -9,7 +9,8 @@ export enum BLOK {
   HERO = 'hero',
 }
 
-interface Asset {
+export interface Asset {
+  id: string;
   alt: string;
   copyright: string;
   fieldtype: 'asset',
