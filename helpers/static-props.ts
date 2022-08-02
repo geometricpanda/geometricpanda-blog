@@ -4,7 +4,7 @@ import {blokResolver} from './blok.resolver';
 import {BlokComponent} from './bloks.interface';
 
 export interface Bloks {
-  body: Array<BlokComponent>;
+  body?: Array<BlokComponent>;
 }
 
 export interface BlogProps extends Bloks {
@@ -17,7 +17,7 @@ export const getBlogStaticProps = async (slug: string, preview = false): Promise
   const version = preview ? 'draft' : 'published';
   const {data} = await Storyblok.getStory(`blog/${slug}`, {version})
   const story = data.story as unknown as BlogStaticProps;
-  const body = story.content.body.map((blok: BlokComponent) => blokResolver(blok));
+  const body = story.content.body?.map((blok: BlokComponent) => blokResolver(blok));
   return {
     ...story,
     content: {

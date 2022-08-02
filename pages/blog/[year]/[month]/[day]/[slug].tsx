@@ -4,8 +4,8 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {ParsedUrlQuery} from 'querystring';
 
-import {BlogStaticProps, getBlogStaticProps} from '../../../../../helpers/static-props';
 import {BlokResolver} from '../../../../../common/components/blok-resolver';
+import {BlogStaticProps, getBlogStaticProps} from '../../../../../helpers/static-props';
 import {getBlogStaticPaths} from '../../../../../helpers/static-paths';
 
 

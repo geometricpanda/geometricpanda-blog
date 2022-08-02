@@ -33,7 +33,7 @@ export const BlokResolver: FC<BlockResolverProps> = ({story}) => {
 
   return (
     <div className={styles['bloks']}>
-      {content.body.map(blok => blokResolver(blok))}
+      {content.body?.map(blok => blokResolver(blok))}
     </div>
   )
 }
