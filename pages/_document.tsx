@@ -1,8 +1,7 @@
+import {FC} from 'react';
 import Document, {Html, Head, Main, NextScript} from 'next/document'
 
-class MyDocument extends Document {
-  render() {
-    return (
+const MyDocument: FC<Document> = () => (
       <Html lang="en-gb">
       <Head>
           <base href='/'/>
@@ -22,7 +21,5 @@ class MyDocument extends Document {
         </body>
       </Html>
     )
-  }
-}
 
 export default MyDocument
