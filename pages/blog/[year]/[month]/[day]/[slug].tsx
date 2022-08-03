@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths<StaticParams> = async () => {
   const paths = await getBlogStaticPaths();
   return {
     paths,
-    fallback: false, // can also be true or 'blocking'
+    fallback: false,
   }
 }
 

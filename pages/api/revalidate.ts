@@ -23,6 +23,7 @@ const handler = async (
     await res.revalidate(`/${full_slug}`);
     return res.json({revalidated: true});
   } catch (e) {
+    console.error(e);
     return res
       .status(500)
       .send('Error revalidating')
