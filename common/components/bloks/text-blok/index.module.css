@@ -1,4 +1,6 @@
 .text-blok {
+    display: grid;
+    gap: var(--spacing-xl);
 }
 
 .text-blok__heading {
@@ -6,7 +8,6 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-T500);
     color: var(--color-light-yellow);
-    margin-bottom: var(--spacing-xl);
 }
 
 .text-blok__subheading {
@@ -14,7 +15,6 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-T400);
     color: var(--color-off-white);
-    margin-bottom: var(--spacing-xl);
 }
 
 .text-blok__content {

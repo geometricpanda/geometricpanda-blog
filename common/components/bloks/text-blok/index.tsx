@@ -55,10 +55,12 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
         </h3>
       )}
 
-      <div
-        onClick={onClick}
-        className={styles['text-blok__content']}
-        dangerouslySetInnerHTML={{__html: renderRichText(blok.body)}}/>
+      {blok.body && (
+        <div
+          onClick={onClick}
+          className={styles['text-blok__content']}
+          dangerouslySetInnerHTML={{__html: renderRichText(blok.body)}}/>
+      )}
 
     </Container>
   )
