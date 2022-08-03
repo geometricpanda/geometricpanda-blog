@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const links: Record<string, StoryblokLink> = data.links;
 
   const paths = Object.values(links)
-    .filter(({is_folder}) => !is_folder)
+    .filter(({is_folder, published}) => !is_folder && published)
     .map(({slug}) => slug.split('/'))
     .map((slug) => ({params: {slug}}));
 
