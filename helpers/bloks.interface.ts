@@ -1,5 +1,6 @@
 import {StoryblokComponent} from 'storyblok-js-client';
 import {LANGUAGE} from './syntax-highlighter';
+import exp from 'constants';
 
 export enum BLOK {
   TEXT = 'text',
@@ -7,6 +8,7 @@ export enum BLOK {
   ASSET = 'asset',
   SNIPPET = 'snippet',
   HERO = 'hero',
+  YOUTUBE = 'youtube',
 }
 
 export interface Asset {
@@ -18,6 +20,11 @@ export interface Asset {
   focus: string,
   name: string;
   title: string;
+}
+
+export interface YouTubeComponentBlok extends StoryblokComponent<BLOK.YOUTUBE> {
+  video_id: string;
+  controls: boolean;
 }
 
 export interface AssetComponentBlok extends StoryblokComponent<BLOK.ASSET> {
@@ -61,4 +68,5 @@ export type BlokComponent =
   | SeparatorComponentBlok
   | AssetComponentBlok
   | SnippetComponentBlok
-  | HeroComponentBlok;
+  | HeroComponentBlok
+  | YouTubeComponentBlok;

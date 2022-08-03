@@ -1,0 +1,5 @@
+.youtube-blok {
+    aspect-ratio: 16/9;
+    padding: 4px;
+    background: linear-gradient(to top left, var(--color-light-blue), var(--color-magenta));
+}

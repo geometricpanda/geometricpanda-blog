@@ -1,14 +1,16 @@
 import {FC, useCallback} from 'react';
-import {BlokComponent, BLOK} from '../../../helpers/bloks.interface';
-import {SnippetBlok} from './snippet-blok';
-import {TextBlok} from './text-blok';
+import {StoryData} from 'storyblok-js-client';
+
+import {BLOK, BlokComponent} from '../../../helpers/bloks.interface';
+import {Bloks} from '../../../helpers/static-props';
 import {SeparatorBlok} from './separator-blok';
+import {SnippetBlok} from './snippet-blok';
+import {AssetsBlok} from './assets-blok';
+import {TextBlok} from './text-blok';
 import {HeroBlok} from './hero-blok';
 
 import styles from './blok-resolver.module.css';
-import {StoryData} from 'storyblok-js-client';
-import {Bloks} from '../../../helpers/static-props';
-import {AssetsBlok} from './assets-blok';
+import {YouTubeBlok} from './youtube-blok';
 
 interface BlockResolverProps {
   story: StoryData<Bloks>,
@@ -29,10 +31,12 @@ export const BlokResolver: FC<BlockResolverProps> = ({story}) => {
         return <HeroBlok key={blok._uid} story={story} blok={blok}/>
       case BLOK.ASSET:
         return <AssetsBlok key={blok._uid} blok={blok} story={story}/>
+      case BLOK.YOUTUBE:
+        return <YouTubeBlok key={blok._uid} blok={blok} story={story}/>
       default:
         return null;
     }
-  }, [])
+  }, [story])
 
   return (
     <div className={styles['bloks']}>

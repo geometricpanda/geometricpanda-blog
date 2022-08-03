@@ -1,8 +1,8 @@
 import {Richtext} from 'storyblok-js-client';
-import {BLOK, BlokComponent, SnippetComponentBlok, TextComponentBlok} from './bloks.interface';
 import {Storyblok} from './storyblock-client';
-import {sanitize} from './sanitizer';
+import {BLOK, BlokComponent, SnippetComponentBlok, TextComponentBlok} from './bloks.interface';
 import {syntaxHighlighter} from './syntax-highlighter';
+import {sanitize} from './sanitizer';
 
 export const textBlokResolver = (blok: TextComponentBlok): TextComponentBlok => {
   const rawBody = blok.body as unknown as Richtext;
@@ -31,7 +31,8 @@ export const blokResolver = (blok: BlokComponent): BlokComponent => {
       return snippetBlokResolver(blok);
     case BLOK.ASSET:
     case BLOK.HERO:
-      case BLOK.SEPARATOR:
+    case BLOK.SEPARATOR:
+    case BLOK.YOUTUBE:
       return blok;
     default:
       console.log(blok);
