@@ -3,6 +3,7 @@ import {StoryblokComponent, storyblokEditable} from '@storyblok/react';
 import type {SbBlokData} from '@storyblok/js/dist/types/types';
 
 import styles from './index.module.css';
+import Head from 'next/head';
 
 export interface ArticleBlokInterface extends SbBlokData {
   title: string;
@@ -15,11 +16,17 @@ export interface ArticleBlokProps {
 }
 
 export const ArticleBlok: FC<ArticleBlokProps> = ({blok}) => (
-  <main className={styles['article']} {...storyblokEditable(blok)}>
-    {blok.body.map((nestedBlok) => (
-      <StoryblokComponent
-        key={nestedBlok._uid}
-        blok={nestedBlok}/>
-    ))}
-  </main>
+  <>
+    <Head>
+      <title>{blok.title} • Geometric Panda</title>
+      <meta name="description" content={blok.description}/>
+    </Head>
+    <main className={styles['article']} {...storyblokEditable(blok)}>
+      {blok.body.map((nestedBlok) => (
+        <StoryblokComponent
+          key={nestedBlok._uid}
+          blok={nestedBlok}/>
+      ))}
+    </main>
+  </>
 )
