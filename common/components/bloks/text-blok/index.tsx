@@ -49,7 +49,7 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
         </h2>
       )}
 
-      {blok.heading && blok.subheading && (
+      {blok.subheading && (
         <h3 className={styles['text-blok__subheading']}>
           {blok.subheading}
         </h3>
