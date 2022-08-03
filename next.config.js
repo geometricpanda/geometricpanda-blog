@@ -11,6 +11,7 @@ const nextConfig = {
         domains: ['a.storyblok.com'],
     },
     experimental: {
+        runtime: 'experimental-edge',
         images: {
             allowFutureImage: true
         }
