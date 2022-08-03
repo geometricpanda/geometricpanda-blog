@@ -1,13 +1,21 @@
-import {FC, MouseEventHandler, useCallback, useEffect, useRef} from 'react';
-import {TextComponentBlok} from '../../../../helpers/bloks.interface';
-import {BlokResolverComponentProps} from '../block-resolver.interface';
+import {FC, MouseEventHandler, useCallback} from 'react';
+import {Richtext, SbBlokData} from '@storyblok/js/dist/types/types';
+import {storyblokEditable} from '@storyblok/react';
+import {renderRichText} from '@storyblok/js';
 
 import styles from './index.module.css';
-import {useEvent} from 'react-use';
+
 import {useRouter} from 'next/router';
 import {Container} from '../../container';
 
-export interface TextBlokProps extends BlokResolverComponentProps<TextComponentBlok> {
+export interface TextBlokInterface extends SbBlokData {
+  heading: string;
+  subheading: string;
+  body: Richtext;
+}
+
+export interface TextBlokProps {
+  blok: TextBlokInterface;
 }
 
 export const TextBlok: FC<TextBlokProps> = ({blok}) => {
@@ -30,8 +38,10 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
     }
   }, [router])
 
+
   return (
-    <Container className={styles['text-blok']}>
+    <Container className={styles['text-blok']}
+               {...storyblokEditable(blok)}>
 
       {blok.heading && (
         <h2 className={styles['text-blok__heading']}>
@@ -48,7 +58,7 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
       <div
         onClick={onClick}
         className={styles['text-blok__content']}
-        dangerouslySetInnerHTML={{__html: blok.body}}/>
+        dangerouslySetInnerHTML={{__html: renderRichText(blok.body)}}/>
 
     </Container>
   )

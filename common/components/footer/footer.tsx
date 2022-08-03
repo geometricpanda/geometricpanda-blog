@@ -1,13 +1,14 @@
 import {FC} from 'react';
-import {ILink} from '../page/page.interface';
-
-import styles from './footer.module.css';
-import {Container} from '../container';
-import {VisuallyHidden} from '../visually-hidden';
 import Link from 'next/link';
 import clsx from 'clsx';
+
+import {Color} from '../../helpers/storyblok.interface';
+import {VisuallyHidden} from '../visually-hidden';
 import {HexSeparator} from '../hex-separator';
-import {Color} from '../../../helpers/bloks.interface';
+import {ILink} from '../page/page.interface';
+import {Container} from '../container';
+
+import styles from './footer.module.css';
 
 export interface FooterProps {
   links: Array<ILink>;

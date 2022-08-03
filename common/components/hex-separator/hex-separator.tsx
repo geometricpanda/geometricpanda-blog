@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import clsx from 'clsx';
-import {Color} from '../../../helpers/bloks.interface';
 
+import {Color} from '../../helpers/storyblok.interface';
 import styles from './hex-separator.module.css';
 
 export interface HexSeparatorProps {

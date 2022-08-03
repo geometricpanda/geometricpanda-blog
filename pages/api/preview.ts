@@ -1,6 +1,6 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import crypto from 'node:crypto'
-import {Storyblok} from '../../helpers/storyblock-client';
+import {Storyblok} from '../../common/helpers/storyblok-client';
 
 const {STORYBLOCK_ACCESS_TOKEN} = process.env
 
