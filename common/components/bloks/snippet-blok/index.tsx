@@ -1,7 +1,7 @@
 import {SbBlokData} from '@storyblok/js/dist/types/types';
 import {storyblokEditable} from '@storyblok/react';
 
-import {FC} from 'react';
+import {FC, useEffect, useState} from 'react';
 import clsx from 'clsx';
 
 import {LANGUAGE, syntaxHighlighter} from '../../../helpers/syntax-highlighter';
@@ -21,19 +21,24 @@ export interface SnippetBlokProps {
   blok: SnippetBlokInterface;
 }
 
-export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => (
-  <Container {...storyblokEditable(blok)}>
-    <div className={styles['snippet-blok']}>
-      <div className={styles['snippet-blok__contents']}>
-        <div className={styles['snippet-blok__filename']}>
-          {blok.filename}
+export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
+
+  const snippet = syntaxHighlighter(blok.code, blok.language);
+
+  return (
+    <Container {...storyblokEditable(blok)}>
+      <div className={styles['snippet-blok']}>
+        <div className={styles['snippet-blok__contents']}>
+          <div className={styles['snippet-blok__filename']}>
+            {blok.filename}
+          </div>
+          <div className={styles['snippet-blok__language']}>
+            {blok.language}
+          </div>
+          <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
+               dangerouslySetInnerHTML={{__html: snippet}}/>
         </div>
-        <div className={styles['snippet-blok__language']}>
-          {blok.language}
-        </div>
-        <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
-             dangerouslySetInnerHTML={{__html: syntaxHighlighter(blok.code, blok.language)}}/>
       </div>
-    </div>
-  </Container>
-)
+    </Container>
+  )
+}

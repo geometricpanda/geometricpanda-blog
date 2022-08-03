@@ -33,7 +33,7 @@ export const syntaxHighlighter = (code: string, language: LANGUAGE) => {
     case LANGUAGE.BASH:
       return Prism.highlight(code, Prism.languages.bash, 'bash');
     default:
-      throw new Error(`Unknown language ${language}`)
+      return code;
   }
 }
 
