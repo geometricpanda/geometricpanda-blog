@@ -20,14 +20,13 @@ export const getAllStories = async (
   acc: Array<StoryData>,
   {
     starts_with = '',
-    version = 'published',
+    version = 'draft',
     per_page = 100,
     page = 1,
   },
 ): Promise<Array<StoryData>> => {
 
   const resp = await Storyblok.get('cdn/stories', {
-    version,
     per_page,
     starts_with,
     page,

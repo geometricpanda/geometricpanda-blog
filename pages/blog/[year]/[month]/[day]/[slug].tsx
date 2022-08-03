@@ -6,10 +6,9 @@ import {BlokResolver} from '../../../../../common/components/blok-resolver';
 import {BlogStaticProps, getBlogStaticProps} from '../../../../../helpers/static-props';
 import {getBlogStaticPaths} from '../../../../../helpers/static-paths';
 
-
 interface BlogPage {
   story: BlogStaticProps;
-  preview: boolean;
+  preview?: boolean;
 }
 
 interface StaticParams extends ParsedUrlQuery {
@@ -33,13 +32,12 @@ export const getStaticProps: GetStaticProps<BlogPage> = async ({params, preview}
   const year = params!.year as string;
   const month = params!.month as string;
   const day = params!.day as string;
+
   const story = await getBlogStaticProps(`${year}/${month}/${day}/${slug}`, preview);
 
   return {
-    props: {
-      story,
-      preview: true,
-    },
+    notFound: !story.content.body,
+    props: {story},
   }
 }
 
