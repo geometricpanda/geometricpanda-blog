@@ -1,6 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import crypto from 'node:crypto'
-import {Storyblok} from '../../common/helpers/storyblok-client';
 
 const {STORYBLOCK_ACCESS_TOKEN} = process.env
 
@@ -11,6 +10,12 @@ const handler = async (
   const storyBlokToken = req.query['_storyblok_tk[token]'];
   const storyBlokSpaceId = req.query['_storyblok_tk[space_id]'];
   const storyBlokTimestamp = req.query['_storyblok_tk[timestamp]'];
+  const storyBlokPublished = req.query['_storyblok_published'];
+
+  if (storyBlokPublished) {
+    res.clearPreviewData();
+    return res.redirect(`/${req.query.slug}`);
+  }
 
   if (!storyBlokToken || !storyBlokSpaceId || !storyBlokTimestamp) {
     return res
@@ -39,10 +44,9 @@ const handler = async (
   }
 
   try {
-    const post = await Storyblok.getStory(`${req.query.slug}`, {version: 'draft'})
     res.setHeader('Set-Cookie', 'SameSite=None;Secure');
     res.setPreviewData({});
-    res.redirect(`/${post.data.story.full_slug}`);
+    res.redirect(`/${req.query.slug}`);
   } catch (e) {
     console.log(e);
     return res.status(401).json({message: 'Invalid slug'})

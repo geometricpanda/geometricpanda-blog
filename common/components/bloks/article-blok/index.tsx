@@ -21,12 +21,12 @@ export const ArticleBlok: FC<ArticleBlokProps> = ({blok}) => (
       <title>{blok.title} • Geometric Panda</title>
       <meta name="description" content={blok.description}/>
     </Head>
-    <main className={styles['article']} {...storyblokEditable(blok)}>
+    <div className={styles['article']} {...storyblokEditable(blok)}>
       {blok.body.map((nestedBlok) => (
         <StoryblokComponent
           key={nestedBlok._uid}
           blok={nestedBlok}/>
       ))}
-    </main>
+    </div>
   </>
 )

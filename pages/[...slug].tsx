@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({params, preview
   const {data} = await storyblokApi.getStory(slug, sbParams);
 
   return {
-    notFound: !data.story,
+    notFound: !preview && !data.story,
     props: {
       story: data.story,
       key: data.story.id,
