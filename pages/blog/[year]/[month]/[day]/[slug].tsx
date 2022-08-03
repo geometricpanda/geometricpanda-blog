@@ -1,7 +1,5 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
-import {useStoryblokBridge} from '@storyblok/js';
 import Head from 'next/head';
-import {useRouter} from 'next/router';
 import {ParsedUrlQuery} from 'querystring';
 
 import {BlokResolver} from '../../../../../common/components/blok-resolver';
@@ -46,15 +44,7 @@ export const getStaticProps: GetStaticProps<BlogPage> = async ({params, preview}
 }
 
 
-export const page: NextPage<BlogPage> = ({story, preview}) => {
-
-  if (preview && typeof window !== "undefined") {
-    /* eslint-disable react-hooks/rules-of-hooks */
-    const router = useRouter();
-    useStoryblokBridge(story.id, () => router.replace(router.asPath, router.asPath, {scroll: false}));
-    /* eslint-enable react-hooks/rules-of-hooks */
-  }
-
+export const page: NextPage<BlogPage> = ({story}) => {
   const title = `${story.content.title} • Blog • Geometric Panda`
   return (
     <>

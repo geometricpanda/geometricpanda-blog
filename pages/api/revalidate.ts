@@ -19,11 +19,13 @@ const handler = async (
   try {
     const story = await Storyblok.getStory(story_id);
     const {full_slug} = story.data.story;
-    await res.revalidate(`/${full_slug}`);
     await Storyblok.flushCache();
+    await res.revalidate(`/${full_slug}`);
     return res.json({revalidated: true});
   } catch (e) {
-    return res.status(500).send('Error revalidating')
+    return res
+      .status(500)
+      .send('Error revalidating')
   }
 }
 

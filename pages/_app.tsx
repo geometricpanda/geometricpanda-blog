@@ -9,7 +9,13 @@ import type {FC} from 'react';
 import {ILink} from '../common/components/page/page.interface';
 import {Page} from '../common/components/page';
 import '../styles/globals.css'
+import Head from 'next/head';
 
+declare global {
+  interface Window {
+    StoryblokBridge: any;
+  }
+}
 
 const initialLinks: Array<ILink> = [
   {href: '/', text: 'Home', active: false, icon: faHome},
@@ -19,10 +25,37 @@ const initialLinks: Array<ILink> = [
 ]
 
 
-const MyApp: FC<AppProps> = ({Component, pageProps}) => (
-  <Page initialLinks={initialLinks}>
-    <Component {...pageProps} />
-  </Page>
-);
+const MyApp: FC<AppProps> = ({Component, pageProps, router}) => {
+  if (router.isPreview && typeof window !== 'undefined') {
+    const addPreviewEvents = () => {
+      if (!window.StoryblokBridge) {
+        setTimeout(addPreviewEvents, 100);
+      }
+
+      const bridge = new window.StoryblokBridge;
+      bridge.on(['published', 'change', 'unpublished'],
+        () => router.replace(router.asPath, undefined, {
+          scroll: false,
+          unstable_skipClientCache: true,
+        }));
+    }
+
+    addPreviewEvents();
+  }
+
+  return (
+    <>
+      <Head>
+        {router.isPreview && (
+          <script src="//app.storyblok.com/f/storyblok-v2-latest.js"
+                  type="text/javascript"
+                  async/>)}
+      </Head>
+      <Page initialLinks={initialLinks}>
+        <Component {...pageProps} />
+      </Page>
+    </>
+  );
+}
 
 export default MyApp
