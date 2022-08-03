@@ -1,6 +1,6 @@
 import {FC, useEffect, useRef} from 'react';
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import Link from 'next/link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
@@ -72,7 +72,7 @@ export const Header: FC<HeaderProps> = ({
               <Image src="/logo.svg"
                      width={100}
                      height={100}
-                     alt={'Simplified illustration of a Panda with coloured stripes'}
+                     alt={'Geometric Panda Logo'}
               />
             </a>
           </Link>
