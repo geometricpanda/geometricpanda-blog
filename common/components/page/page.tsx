@@ -1,14 +1,14 @@
 import {FC, ReactNode, useCallback, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 
-import {ILink} from './page.interface';
+import {Color} from '../../helpers/storyblok.interface';
 import {Sidenav} from '../sidenav';
 import {Header} from '../header';
 import {Footer} from '../footer';
 import {HexSeparator} from '../hex-separator';
 
+import {ILink} from './page.interface';
 import styles from './page.module.css';
-import {Color} from '../../../helpers/bloks.interface';
 
 export interface PageProps {
   children: ReactNode;

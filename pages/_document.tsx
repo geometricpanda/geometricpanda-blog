@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import Document, {Html, Head, Main, NextScript} from 'next/document'
+import Document, {Head, Html, Main, NextScript} from 'next/document'
 
 const MyDocument: FC<Document> = () => (
       <Html lang="en-gb">

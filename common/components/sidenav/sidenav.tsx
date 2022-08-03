@@ -1,5 +1,5 @@
-import {FC, useEffect, useRef} from 'react';
-import ScrollLock, {TouchScrollable} from 'react-scrolllock';
+import {FC, useRef} from 'react';
+import ScrollLock from 'react-scrolllock';
 import FocusTrap from 'focus-trap-react';
 import {Options} from 'focus-trap';
 import Link from 'next/link';

@@ -1,13 +1,30 @@
-import {BlokResolverComponentProps} from '../block-resolver.interface';
-import {Asset, AssetComponentBlok} from '../../../../helpers/bloks.interface';
 import {FC} from 'react';
+import clsx from 'clsx';
 import Image from 'next/future/image';
+import {SbBlokData} from '@storyblok/js/dist/types/types';
+
 import {Container} from '../../container';
 
 import styles from './index.module.css';
-import clsx from 'clsx';
 
-export interface AssetsBlokProps extends BlokResolverComponentProps<AssetComponentBlok> {
+export interface Asset {
+  id: string;
+  alt: string;
+  copyright: string;
+  fieldtype: 'asset',
+  filename: string;
+  focus: string,
+  name: string;
+  title: string;
+}
+
+export interface AssetsBlokInterface extends SbBlokData {
+  images: Array<Asset>;
+  videos: Array<Asset>;
+}
+
+export interface AssetsBlokProps {
+  blok: AssetsBlokInterface;
 }
 
 const ImageAsset: FC<Asset> = ({filename, title, alt}) => {
@@ -21,22 +38,22 @@ const ImageAsset: FC<Asset> = ({filename, title, alt}) => {
        rel={'noreferrer'}
        target={'_blank'}
        className={styles['asset']}>
-        <Image
-          className={styles['asset__media']}
-          alt={alt}
-          src={filename}
-          width={width}
-          height={height}/>
+      <Image
+        className={styles['asset__media']}
+        alt={alt}
+        src={filename}
+        width={width}
+        height={height}/>
     </a>
   )
 }
 const VideoAsset: FC<Asset> = ({filename}) => (
   <div className={styles['asset']}>
-      <video
-        className={styles['asset__media']}
-        controls={true}>
-        <source src={filename}/>
-      </video>
+    <video
+      className={styles['asset__media']}
+      controls={true}>
+      <source src={filename}/>
+    </video>
   </div>
 )
 

@@ -1,5 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {Storyblok} from '../../helpers/storyblock-client';
+import {Storyblok} from '../../common/helpers/storyblok-client';
 
 const {
   CACHE_REVALIDATE_TOKEN,

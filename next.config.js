@@ -11,11 +11,12 @@ const nextConfig = {
         domains: ['a.storyblok.com'],
     },
     experimental: {
-        runtime: 'experimental-edge',
+        runtime: 'nodejs',
+        serverComponents: true,
         images: {
-            allowFutureImage: true
+            allowFutureImage: true,
         }
-    }
+    },
 }
 
 module.exports = nextConfig
