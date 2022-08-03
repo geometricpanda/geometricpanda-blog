@@ -48,6 +48,7 @@ export const page: NextPage<BlogPage> = ({story}) => {
     <>
       <Head>
         <title>{title}</title>
+        <meta name={'description'} content={story.content.description}/>
       </Head>
       <BlokResolver story={story}/>
     </>
