@@ -77,6 +77,10 @@
     border: 2px solid white;
 }
 
+.sidenav__close-button svg {
+    width: 1em;
+}
+
 .sidenav__close-button:focus {
     box-shadow: var(--focus-box-shadow);
     outline: var(--focus-outline);
@@ -126,5 +130,5 @@
 .link__icon {
     font-size: 0.8em;
     margin-bottom: 4px;
-    min-width: 24px;
+    width: 1em;
 }

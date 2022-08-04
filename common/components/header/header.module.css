@@ -37,6 +37,10 @@
     border: 2px solid white;
 }
 
+.header__hamburger-button svg {
+    width: 1em;
+}
+
 
 .header__hamburger-button:focus {
     box-shadow: var(--focus-box-shadow);
