@@ -1,0 +1,100 @@
+.github-blok {
+    position: relative;
+    z-index: 0;
+}
+
+.github-blok__decoration {
+    position: absolute;
+    background: linear-gradient(to top left, var(--color-orange), var(--color-dark-magenta));
+    inset: -16px;
+    transform: skew(-3.5deg);
+    z-index: -1;
+}
+
+.github-blok__decoration:before,
+.github-blok__decoration:after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    height: 50%;
+    width: 50%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.github-blok__decoration:before {
+    right: 6px;
+    top: 6px;
+    border-top: 3px solid var(--color-white);
+    border-right: 3px solid var(--color-white);
+}
+
+.github-blok__decoration:after {
+    left: 4px;
+    bottom: 6px;
+    border-left: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
+}
+
+.github-blok__content {
+    background-color: var(--color-black);
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+    padding: 24px;
+    gap: 24px;
+    display: flex;
+}
+
+.github-blok__icon {
+
+}
+
+.github-blok__fontawesome {
+    font-size: 40px;
+    color: var(--color-white);
+}
+
+.github-blok__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.github-blok__intro {
+    color: var(--color-white);
+    font-size: var(--font-size-T300);
+    line-height: var(--line-height-T300);
+    font-weight: var(--font-weight-light);
+}
+
+.github-blok__link {
+    color: var(--color-light-blue);
+    font-size: var(--font-size-T400);
+    line-height: var(--line-height-T400);
+    font-weight: var(--font-weight-bold);
+}
+
+.github-blok__link {
+    color: var(--color-pink);
+    text-decoration-thickness: 2px;
+    transition: color var(--transition-time-fast) linear;
+    display: inline;
+}
+
+.github-blok__link:hover {
+    color: var(--color-light-yellow);
+
+}
+
+.github-blok__link:focus {
+    box-shadow: var(--focus-box-shadow);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+    padding: 4px;
+    margin: -4px;
+}
+
+@media (min-width: 48em) {
+    .github-blok__decoration {
+        transform: skew(-10deg);
+    }
+}

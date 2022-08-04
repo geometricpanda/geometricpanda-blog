@@ -87,14 +87,17 @@
 }
 
 
-.text-blok__content ul li::marker {
+.text-blok__content ul li::marker,
+.text-blok__content ol ul li::marker {
     color: var(--color-magenta);
     font-size: var(--font-size-T400);
     line-height: var(--font-size-T300);
     font-weight: var(--font-weight-bold);
 }
 
-.text-blok__content ol li::marker {
+
+.text-blok__content ol li::marker,
+.text-blok__content ul ol li::marker{
     color: var(--color-teal);
     font-weight: var(--font-weight-bold);
 }

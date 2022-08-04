@@ -20,6 +20,7 @@ import {
 import {ILink} from '../common/components/page/page.interface';
 import {Page} from '../common/components/page';
 import '../styles/globals.css'
+import {GithubRepoBlok} from '../common/components/bloks/github-repo-blok';
 
 
 storyblokInit({
@@ -31,6 +32,7 @@ storyblokInit({
     text: TextBlok,
     separator: SeparatorBlok,
     snippet: SnippetBlok,
+    github_repo: GithubRepoBlok,
   },
 });
 

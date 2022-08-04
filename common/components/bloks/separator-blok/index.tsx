@@ -12,8 +12,8 @@ export interface SeparatorBlokProps {
 }
 
 export const SeparatorBlok: FC<SeparatorBlokProps> = ({blok}) => (
-  <hr className={styles['separator']}
-      {...storyblokEditable(blok)}
-  />
+  <div {...storyblokEditable(blok)}>
+    <hr className={styles['separator']}/>
+  </div>
 )
 

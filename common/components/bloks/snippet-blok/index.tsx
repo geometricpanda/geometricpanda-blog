@@ -28,8 +28,7 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
   return (
     <Container {...storyblokEditable(blok)}>
       <div className={styles['snippet-blok']}>
-        <div className={styles['snippet-blok__decoration']}>
-        </div>
+        <div className={styles['snippet-blok__decoration']}/>
         <div className={styles['snippet-blok__filename']}>
           {blok.filename}
         </div>
@@ -38,7 +37,6 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
         </div>
         <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
              dangerouslySetInnerHTML={{__html: snippet}}/>
-
       </div>
     </Container>
   )

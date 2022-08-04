@@ -1,5 +1,9 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {Storyblok} from '../../common/helpers/storyblok-client';
+import StoryblokClient from 'storyblok-js-client';
+
+const Storyblok = new StoryblokClient({
+  accessToken: 'UM2LrADUyvXeTgEjKgAKCgtt',
+});
 
 const {
   CACHE_REVALIDATE_TOKEN,

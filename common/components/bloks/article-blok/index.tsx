@@ -18,7 +18,7 @@ export interface ArticleBlokProps {
 export const ArticleBlok: FC<ArticleBlokProps> = ({blok}) => (
   <>
     <Head>
-      <title>{blok.title} • Geometric Panda</title>
+      <title>{`${blok.title} • Geometric Panda`}</title>
       <meta name="description" content={blok.description}/>
     </Head>
     <div className={styles['article']} {...storyblokEditable(blok)}>
