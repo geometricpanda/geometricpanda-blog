@@ -1,7 +1,11 @@
 :root {
-    --focus-box-shadow:
-            0 0 0 2px var(--color-light-yellow),
-            0 0 0 4px var(--color-magenta);
+
+    --focus-box-shadow-inset:
+            inset 0 0 0 2px var(--color-magenta),
+            inset 0 0 0 4px var(--color-light-yellow);
+
+    --focus-box-shadow: 0 0 0 2px var(--color-light-yellow),
+    0 0 0 4px var(--color-magenta);
     --focus-outline: 2px solid transparent;
     --focus-outline-offset: 2px;
 

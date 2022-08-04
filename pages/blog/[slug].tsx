@@ -1,7 +1,7 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
 import {getStoryblokApi, StoryblokComponent, StoryData, useStoryblokState} from '@storyblok/react';
 import {StoryParams} from 'storyblok-js-client';
-import {StoryblokLink} from '../common/helpers/storyblok.interface';
+import {StoryblokLink} from '../../common/helpers/storyblok.interface';
 
 interface PageProps {
   story: StoryData;
@@ -10,18 +10,14 @@ interface PageProps {
 
 export const getStaticProps: GetStaticProps<PageProps> = async ({params, preview}) => {
 
-  const slug = params?.slug
-    ? Array.isArray(params.slug)
-      ? params.slug.join('/')
-      : params.slug
-    : 'home';
+  const slug = params?.slug as string;
 
   const sbParams: StoryParams = {
     version: preview ? 'draft' : 'published',
   };
 
   const storyblokApi = getStoryblokApi();
-  const {data} = await storyblokApi.getStory(slug, sbParams);
+  const {data} = await storyblokApi.getStory(`blog/${slug}`, sbParams);
 
   return {
     notFound: !preview && !data.story,
@@ -39,8 +35,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const links: Record<string, StoryblokLink> = data.links;
 
   const paths = Object.values(links)
-    .filter(({is_folder, published}) => !is_folder && published)
-    .map(({slug}) => slug.split('/'))
+    .filter(({published, slug}) => published && slug.includes('blog/'))
+    .map(({slug}) => slug.replace('blog/',''))
     .map((slug) => ({params: {slug}}));
 
   return {

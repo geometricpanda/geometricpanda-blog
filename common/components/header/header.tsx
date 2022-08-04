@@ -70,6 +70,7 @@ export const Header: FC<HeaderProps> = ({
                      width={75}
                      height={75}
                      alt={'Geometric Panda Logo'}
+                     priority
               />
             </a>
           </Link>

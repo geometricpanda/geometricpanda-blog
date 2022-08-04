@@ -17,6 +17,10 @@
     color: var(--color-off-white);
 }
 
+.text-blok__heading + .text-blok__subheading {
+    margin-top: -16px;
+}
+
 .text-blok__content {
     display: grid;
     gap: var(--spacing-xl);
@@ -119,8 +123,7 @@
     background-color: var(--color-magenta-grey);
     color: var(--color-white);
     font-weight: var(--font-weight-light);
-    padding: 4px 6px 6px;
+    padding: 0 8px 2px;
     display: inline-block;
-    margin: 0;
     border-radius: 4px;
 }
