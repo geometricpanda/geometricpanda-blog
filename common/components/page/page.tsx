@@ -19,7 +19,6 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
     const router = useRouter();
 
     const [navigationExpanded, setNavigationExpanded] = useState<boolean>(false)
-    const [navigationId] = useState<string>('navigation-container');
     const [links, setLinks] = useState<Array<ILink>>(initialLinks);
 
 
@@ -43,15 +42,13 @@ export const Page: FC<PageProps> = ({children, initialLinks}) => {
         {navigationExpanded && (
           <Sidenav
             links={links}
-            onNavigationChange={onNavigationChange}
-            navigationId={navigationId}/>
+            onNavigationChange={onNavigationChange}/>
         )}
 
         <Header
           links={links}
           aria-hidden={navigationExpanded || undefined}
           onNavigationChange={onNavigationChange}
-          navigationId={navigationId}
           navigationExpanded={navigationExpanded}/>
 
         <main className={styles['page__content']}

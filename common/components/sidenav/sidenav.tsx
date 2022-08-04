@@ -13,13 +13,11 @@ import styles from './sidenav.module.css';
 
 export interface SidenavProps {
   links: Array<ILink>;
-  navigationId: string;
   onNavigationChange: (state: boolean) => void;
 }
 
 export const Sidenav: FC<SidenavProps> = ({
   links,
-  navigationId,
   onNavigationChange,
 }) => {
 
@@ -37,9 +35,8 @@ export const Sidenav: FC<SidenavProps> = ({
            className={styles['sidenav-backdrop']}/>
       <FocusTrap focusTrapOptions={options}>
         <div>
-          <ScrollLock>
-            <nav id={navigationId}
-                 aria-describedby={'navigation-title'}
+          <ScrollLock accountForScrollbars={false}>
+            <nav aria-describedby={'navigation-title'}
                  className={clsx({
                    [styles['sidenav']]: true,
                  })}>
@@ -53,7 +50,6 @@ export const Sidenav: FC<SidenavProps> = ({
                   ref={closeButton}
                   className={styles['sidenav__close-button']}
                   aria-label={'Close Menu'}
-                  aria-controls={navigationId}
                   aria-expanded={true}
                   onClick={() => onNavigationChange(false)}>
                   <FontAwesomeIcon icon={faTimes}/>

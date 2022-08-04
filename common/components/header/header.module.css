@@ -59,10 +59,11 @@
 .link {
     display: flex;
     color: var(--color-off-white);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-T300);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-T200);
     text-decoration: none;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     transition: color var(--transition-time-fast) linear;
     padding: 6px 6px 3px;
     margin: -6px -6px -3px;
@@ -75,6 +76,7 @@
 }
 
 .link--active {
+    color: var(--color-white);
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }

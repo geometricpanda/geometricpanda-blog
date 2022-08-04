@@ -11,7 +11,6 @@ import styles from './header.module.css';
 
 export interface HeaderProps {
   navigationExpanded: boolean;
-  navigationId: string;
   onNavigationChange: (boolean: true) => void,
   links: Array<ILink>;
   'aria-hidden': true | undefined;
@@ -19,7 +18,6 @@ export interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({
   links,
-  navigationId,
   navigationExpanded,
   onNavigationChange,
   'aria-hidden': ariaHidden,
@@ -41,7 +39,6 @@ export const Header: FC<HeaderProps> = ({
             ref={hamburger}
             className={styles['header__hamburger-button']}
             aria-label={'Open Menu'}
-            aria-controls={navigationId}
             aria-expanded={navigationExpanded}
             onClick={() => onNavigationChange(true)}>
             <FontAwesomeIcon icon={faBars}/>
@@ -70,8 +67,8 @@ export const Header: FC<HeaderProps> = ({
           <Link href="/" passHref>
             <a className={clsx(styles['link'], styles['link--img'])}>
               <Image src="/logo.svg"
-                     width={100}
-                     height={100}
+                     width={75}
+                     height={75}
                      alt={'Geometric Panda Logo'}
               />
             </a>
