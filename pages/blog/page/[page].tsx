@@ -2,7 +2,7 @@ import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
 import {StoriesParams} from 'storyblok-js-client';
 import {getStoryblokApi, StoryData} from '@storyblok/react';
 
-import {ListArticleSummary} from '../../../common/components/list-article-summary';
+import {ArticleSummary} from '../../../common/components/article-summary';
 import {ArticleBlokInterface} from '../../../common/components/bloks';
 import {Color} from '../../../common/helpers/storyblok.interface';
 import {Container} from '../../../common/components/container';
@@ -87,7 +87,7 @@ const Page: NextPage<PageProps> = ({data, page, total}) => {
 
         <div className={styles.articles}>
           {data.stories.map((story) => (
-            <ListArticleSummary
+            <ArticleSummary
               key={story.id}
               story={story}/>
           ))}

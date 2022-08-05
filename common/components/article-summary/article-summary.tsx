@@ -8,12 +8,13 @@ import clsx from 'clsx';
 import {ArticleBlokInterface} from '../bloks';
 import {useResizedImage} from '../../helpers/useResizedImage';
 import styles from './list-article-summary.module.css';
+import {VisuallyHidden} from '../visually-hidden';
 
-export interface ListArticleSummaryProps {
+export interface ArticleSummaryProps {
   story: StoryData<ArticleBlokInterface>;
 }
 
-export const ListArticleSummary: FC<ListArticleSummaryProps> = ({story}) => (
+export const ArticleSummary: FC<ArticleSummaryProps> = ({story}) => (
   <div className={clsx({
     [styles['article']]: true,
     [styles['article--featured']]: story.tag_list.includes('featured'),
@@ -35,7 +36,8 @@ export const ListArticleSummary: FC<ListArticleSummaryProps> = ({story}) => (
         </div>
         <Link href={`/${story.full_slug}`} passHref>
           <a className={styles['article__link']}>
-            Read more
+            Read full article
+            <VisuallyHidden>: {story.content.seo_title}</VisuallyHidden>
           </a>
         </Link>
         <div className={styles['article__date']}>
