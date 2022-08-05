@@ -8,9 +8,9 @@
 
 .snippet-blok__decoration {
     position: absolute;
-    background: linear-gradient(to top left, var(--color-dark-purple), var(--color-purple));
-    inset: -8px;
+    background: linear-gradient(to right, var(--color-dark-purple), var(--color-purple));
     transform: skew(-5.5deg);
+    inset: 0 -8px;
     z-index: -2;
 }
 

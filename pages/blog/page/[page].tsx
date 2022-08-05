@@ -90,7 +90,7 @@ const Page: NextPage<PageProps> = ({data, page, total}) => {
           content={`Page ${page} of ${total}, A collection of articles about ${topics}.`}
         />
       </Head>
-      <Hero colour={Color.DARK_PURPLE}
+      <Hero colour={Color.ORANGE}
             title={'Blog Articles'}
             subtitle={`Page ${page} of ${total}`}
       />

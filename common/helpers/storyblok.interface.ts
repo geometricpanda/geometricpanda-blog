@@ -19,4 +19,5 @@ export enum Color {
   DARK_TEAL = 'dark-teal',
   DARK_MAGENTA = 'dark-magenta',
   DARK_PURPLE = 'dark-purple',
+  ORANGE = 'orange',
 }

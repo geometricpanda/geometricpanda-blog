@@ -1,5 +1,8 @@
 .footer {
-    background-color: var(--color-dark-magenta);
+    background:
+            linear-gradient(to bottom, var(--color-dark-purple), var(--color-dark-magenta)),
+            linear-gradient(to top , #000, var(--color-dark-magenta));
+    background-blend-mode: screen;
 }
 
 .footer__nav {

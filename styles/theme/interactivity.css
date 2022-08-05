@@ -4,20 +4,35 @@
             0 0 0 2px var(--color-light-yellow),
             0 0 0 4px var(--color-magenta);
 
+    --focus-box-shadow-inset:
+            inset 0 0 0 8px var(--color-light-yellow),
+            inset 0 0 0 4px var(--color-magenta);
+
     --focus-box-shadow-invert:
             0 0 0 2px var(--color-magenta),
             0 0 0 4px var(--color-light-yellow);
 
+    --focus-box-shadow-invert-inset:
+            inset 0 0 0 2px var(--color-magenta),
+            inset 0 0 0 4px var(--color-light-yellow);
+
     --focus-outline: 2px solid transparent;
     --focus-outline-offset: 2px;
+    --focus-outline-offset-invert: -2px;
 
     --transition-time-fast: 150ms;
     --transition-time-medium: 300ms;
+    --transition-time-slow: 0.75s;
+    --transition-time-super-slow: 1s;
+    --transition-time-extra-slow: 2s;
 }
 
 @media (prefers-reduced-motion: reduce) {
     :root {
         --transition-time-fast: 0;
         --transition-time-medium: 0;
+        --transition-time-slow: 0;
+        --transition-time-super-slow: 0;
+        --transition-time-extra-slow: 0;
     }
 }

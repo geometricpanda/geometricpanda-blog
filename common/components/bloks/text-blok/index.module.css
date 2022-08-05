@@ -102,7 +102,7 @@
 
 .text-blok__content ol li::marker,
 .text-blok__content ul ol li::marker{
-    color: var(--color-teal);
+    color: var(--color-light-teal);
     font-weight: var(--font-weight-bold);
 }
 

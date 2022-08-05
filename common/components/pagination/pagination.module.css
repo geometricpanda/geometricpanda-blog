@@ -44,6 +44,7 @@
     background-color: transparent;
     border: 2px solid var(--color-magenta);
     gap: 8px;
+    padding: 4px 16px 2px;
     transition: var(--transition-time-fast) linear;
     transition-property: border-color, background-color, color, box-shadow;
 }
@@ -69,7 +70,6 @@
 
 .pagination__link--previous,
 .pagination__link--next {
-    padding: 4px 16px 2px;
     background-color: var(--color-magenta);
 }
 

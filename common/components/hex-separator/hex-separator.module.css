@@ -25,6 +25,10 @@
     background-image: url('../../../public/hexagons/dark-purple.svg');
 }
 
+.hex-separator--color-orange {
+    background-image: url('../../../public/hexagons/orange.svg');
+}
+
 .hex-separator--color-grey {
     background-image: url('../../../public/hexagons/grey.svg');
 }

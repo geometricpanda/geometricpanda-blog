@@ -17,5 +17,6 @@ export const HexSeparator: FC<HexSeparatorProps> = ({color}) => (
     [styles['hex-separator--color-dark-teal']]: color === Color.DARK_TEAL,
     [styles['hex-separator--color-grey']]: color === Color.GREY,
     [styles['hex-separator--color-dark-purple']]: color === Color.DARK_PURPLE,
+    [styles['hex-separator--color-orange']]: color === Color.ORANGE,
   })}/>
 )

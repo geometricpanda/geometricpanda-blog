@@ -1,36 +1,50 @@
 .hero {
-    --hero-color: var(--color-black);
+    --hero-start-color: var(--color-black);
+    --hero-end-color: var(--hero-start-color);
     --hero-contrast: var(--color-white);
     display: flex;
     flex-direction: column;
 }
 
 .hero--black {
-    --hero-color: var(--color-black);
+    --hero-start-color: var(--color-off-black);
+    --hero-end-color: var(--color-black);
 }
 
 .hero--grey {
-    --hero-color: var(--color-grey);
+    --hero-start-color: var(--color-off-grey);
+    --hero-end-color: var(--color-grey);
 }
 
 .hero--dark-blue {
-    --hero-color: var(--color-dark-blue);
+    --hero-start-color: var(--color-blue);
+    --hero-end-color: var(--color-dark-blue);
 }
 
 .hero--dark-teal {
-    --hero-color: var(--color-dark-teal);
+    --hero-start-color: var(--color-teal);
+    --hero-end-color: var(--color-dark-teal);
 }
 
 .hero--dark-magenta {
-    --hero-color: var(--color-dark-magenta);
+    --hero-start-color: var(--color-magenta);
+    --hero-end-color: var(--color-dark-magenta);
 }
 
 .hero--dark-purple {
-    --hero-color: var(--color-dark-purple);
+    --hero-start-color: var(--color-purple);
+    --hero-end-color: var(--color-dark-purple);
+}
+
+.hero--orange {
+    --hero-start-color: var(--color-magenta);
+    --hero-end-color: var(--color-orange);
 }
 
 .hero__wrapper {
-    background-color: var(--hero-color);
+    background: linear-gradient(to bottom, var(--hero-start-color), var(--hero-end-color)),
+    linear-gradient(to bottom, var(--hero-start-color), #000);
+    background-blend-mode: screen;
 }
 
 .hero__content {

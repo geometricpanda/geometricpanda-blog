@@ -6,21 +6,41 @@
 
 .github-blok__decoration {
     position: absolute;
-    background: linear-gradient(to top left, var(--color-orange), var(--color-dark-magenta));
-    inset: -32px 32px;
-    transform: skew(-10deg);
+    background: linear-gradient(to top left, var(--color-dark-magenta) 50%, var(--color-orange)),
+    linear-gradient(to top left, #000, var(--color-orange));
+    background-blend-mode: screen;
+    transition: var(--transition-time-extra-slow) cubic-bezier(0.175, 0.885, 0.32, 1.575);
+    transform: skew(10deg);
+    inset: 0;
+    transition-property: transform, inset, box-shadow;
     z-index: -1;
 }
+
+.github-blok--intersected .github-blok__decoration {
+    transform: skew(-10deg);
+    inset: -16px 32px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 48em) {
+    .github-blok--intersected .github-blok__decoration {
+        transform: skew(-10deg);
+    }
+}
+
 
 .github-blok__decoration:before,
 .github-blok__decoration:after {
     position: absolute;
     content: '';
     pointer-events: none;
-    height: 50%;
-    width: 50%;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: var(--transition-time-extra-slow) ease-out;
+    transition-property: width, height, opacity;
+    transition-delay: 1s;
 }
 
 .github-blok__decoration:before {
@@ -31,11 +51,19 @@
 }
 
 .github-blok__decoration:after {
-    left: 4px;
+    left: 6px;
     bottom: 6px;
-    border-left: 2px solid var(--color-white);
-    border-bottom: 2px solid var(--color-white);
+    border-left: 3px solid var(--color-white);
+    border-bottom: 3px solid var(--color-white);
 }
+
+.github-blok--intersected .github-blok__decoration:before,
+.github-blok--intersected .github-blok__decoration:after {
+    opacity: 0.5;
+    width: 50%;
+    height: 50%;
+}
+
 
 .github-blok__content {
     background-color: var(--color-black);
@@ -43,10 +71,6 @@
     padding: 24px;
     gap: 24px;
     display: flex;
-}
-
-.github-blok__icon {
-
 }
 
 .github-blok__fontawesome {
@@ -76,7 +100,7 @@
 }
 
 .github-blok__link {
-    color: var(--color-pink);
+    color: var(--color-magenta-light);
     text-decoration-thickness: 2px;
     transition: color var(--transition-time-fast) linear;
     display: inline;
@@ -93,10 +117,4 @@
     outline-offset: var(--focus-outline-offset);
     padding: 4px;
     margin: -4px;
-}
-
-@media (min-width: 48em) {
-    .github-blok__decoration {
-        transform: skew(-10deg);
-    }
 }
