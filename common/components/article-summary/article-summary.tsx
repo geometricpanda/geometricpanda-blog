@@ -12,9 +12,10 @@ import {VisuallyHidden} from '../visually-hidden';
 
 export interface ArticleSummaryProps {
   story: StoryData<ArticleBlokInterface>;
+  index: number;
 }
 
-export const ArticleSummary: FC<ArticleSummaryProps> = ({story}) => (
+export const ArticleSummary: FC<ArticleSummaryProps> = ({story, index}) => (
   <div className={clsx({
     [styles['article']]: true,
     [styles['article--featured']]: story.tag_list.includes('featured'),
@@ -24,7 +25,9 @@ export const ArticleSummary: FC<ArticleSummaryProps> = ({story}) => (
              alt={story.content.seo_image.alt}
              src={useResizedImage(story.content.seo_image.filename, 720, 720)}
              width={720}
-             height={720}/>
+             height={720}
+             priority={index < 4}
+      />
       <div className={styles['article__content']}>
         <Link href={`/${story.full_slug}`} passHref>
           <a className={styles['article__title']}>

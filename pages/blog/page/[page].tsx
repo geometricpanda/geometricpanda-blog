@@ -97,8 +97,9 @@ const Page: NextPage<PageProps> = ({data, page, total}) => {
       <Container>
 
         <div className={styles.articles}>
-          {data.stories.map((story) => (
+          {data.stories.map((story, index) => (
             <ArticleSummary
+              index={index}
               key={story.id}
               story={story}/>
           ))}
