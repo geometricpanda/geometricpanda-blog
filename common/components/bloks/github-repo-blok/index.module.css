@@ -71,6 +71,7 @@
     font-size: var(--font-size-T400);
     line-height: var(--line-height-T400);
     font-weight: var(--font-weight-bold);
+    word-break: break-all;
 }
 
 .github-blok__link {
