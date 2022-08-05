@@ -59,25 +59,26 @@ export const Pagination: FC<PaginationProps> = ({
          className={styles['pagination']}
          aria-label={'Pagination Navigation'}>
 
-      <div className={clsx({
-        [styles['pagination__links']]: true,
-        [styles['pagination__links--previous']]: true,
-      })}>
-        <Link href={`${baseSlug}/${currentPage - 1}`}>
-          <a
-            aria-label={'Go to Previous Page'}
-            className={clsx({
-              [styles['pagination__link']]: true,
-              [styles['pagination__link--previous']]: true,
-              [styles['pagination__link--hide']]: currentPage === 1,
-            })}>
-            <FontAwesomeIcon
-              className={styles['pagination__link-icon']}
-              icon={faChevronLeft}/>
-            Previous
-          </a>
-        </Link>
-      </div>
+      {currentPage !== 1 && (
+        <div className={clsx({
+          [styles['pagination__links']]: true,
+          [styles['pagination__links--previous']]: true,
+        })}>
+          <Link href={`${baseSlug}/${currentPage - 1}`}>
+            <a
+              aria-label={'Go to Previous Page'}
+              className={clsx({
+                [styles['pagination__link']]: true,
+                [styles['pagination__link--previous']]: true,
+              })}>
+              <FontAwesomeIcon
+                className={styles['pagination__link-icon']}
+                icon={faChevronLeft}/>
+              Previous
+            </a>
+          </Link>
+        </div>
+      )}
 
       <div className={clsx({
         [styles['pagination__links']]: true,
@@ -86,25 +87,26 @@ export const Pagination: FC<PaginationProps> = ({
         {links}
       </div>
 
-      <div className={clsx({
-        [styles['pagination__links']]: true,
-        [styles['pagination__links--next']]: true,
-      })}>
-        <Link href={`${baseSlug}/${currentPage + 1}`}>
-          <a
-            aria-label={'Go to Next Page'}
-            className={clsx({
-              [styles['pagination__link']]: true,
-              [styles['pagination__link--next']]: true,
-              [styles['pagination__link--hide']]: currentPage === totalPages,
-            })}>
-            Next
-            <FontAwesomeIcon
-              className={styles['pagination__link-icon']}
-              icon={faChevronRight}/>
-          </a>
-        </Link>
-      </div>
+      {currentPage !== totalPages && (
+        <div className={clsx({
+          [styles['pagination__links']]: true,
+          [styles['pagination__links--next']]: true,
+        })}>
+          <Link href={`${baseSlug}/${currentPage + 1}`}>
+            <a
+              aria-label={'Go to Next Page'}
+              className={clsx({
+                [styles['pagination__link']]: true,
+                [styles['pagination__link--next']]: true,
+              })}>
+              Next
+              <FontAwesomeIcon
+                className={styles['pagination__link-icon']}
+                icon={faChevronRight}/>
+            </a>
+          </Link>
+        </div>
+      )}
     </nav>
   )
 }

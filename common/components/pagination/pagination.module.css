@@ -73,10 +73,6 @@
     background-color: var(--color-magenta);
 }
 
-.pagination__link--hide {
-    visibility: hidden;
-}
-
 .pagination__link--current {
     text-decoration: underline;
     background-color: var(--color-magenta);
