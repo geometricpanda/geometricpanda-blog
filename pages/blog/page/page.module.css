@@ -2,7 +2,8 @@
     display: grid;
     gap: 32px;
     grid-auto-flow: dense;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
+    margin-top: 32px;
 }
 
 @media (min-width: 48em) {

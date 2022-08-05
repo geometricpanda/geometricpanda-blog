@@ -12,4 +12,5 @@
 .page__decoration {
     background-image: url('../../../public/damask.svg');
     background-color: var(--color-black);
+    padding-bottom: 32px;
 }
