@@ -74,10 +74,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 const Page: NextPage<PageProps> = ({data, page, total}) => {
+  const topicsSet = data.stories.reduce((acc, story) => {
+    story.tag_list.forEach(tag => acc.add(tag));
+    return acc;
+  }, new Set<string>());
+
+  const topics = Array.from(topicsSet).join(', ');
+
   return (
     <>
       <Head>
         <title>{`Page ${page} of ${total} • Blog • Geometric Panda`}</title>
+        <meta
+          name={'description'}
+          content={`Page ${page} of ${total}, A collection of articles about ${topics}.`}
+        />
       </Head>
       <Hero colour={Color.DARK_PURPLE}
             title={'Blog Articles'}
