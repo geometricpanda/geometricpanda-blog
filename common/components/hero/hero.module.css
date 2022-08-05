@@ -42,9 +42,9 @@
 }
 
 .hero__wrapper {
-    background: linear-gradient(to bottom, var(--hero-start-color), var(--hero-end-color)),
-    linear-gradient(to bottom, var(--hero-start-color), #000);
-    background-blend-mode: screen;
+    background:
+            linear-gradient(to bottom, var(--hero-start-color), var(--hero-end-color)),
+            linear-gradient(to bottom, var(--hero-start-color), #000);
 }
 
 .hero__content {

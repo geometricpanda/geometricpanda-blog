@@ -10,7 +10,7 @@ const Home: NextPage = () => (
       <title>Home • Blog • Geometric Panda</title>
     </Head>
     <Hero
-      colour={Color.ORANGE}
+      colour={Color.DARK_PURPLE}
       title={'Welcome to Geometric Panda'}
       subtitle={'A collection of thoughts and hacks'}/>
     <Container>

@@ -22,11 +22,6 @@ const nextConfig = {
                 destination: '/blog',
                 permanent: true,
             },
-            {
-                source: '/blog/page/0',
-                destination: '/blog',
-                permanent: true,
-            },
         ]
     },
     images: {
@@ -36,7 +31,7 @@ const nextConfig = {
     },
     experimental: {
         runtime: 'nodejs',
-        // serverComponents: true,
+        serverComponents: true,
         images: {
             allowFutureImage: true,
         }

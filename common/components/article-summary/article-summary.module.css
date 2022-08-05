@@ -1,14 +1,13 @@
 .article {
-    --background-gradient: linear-gradient(to bottom right, var(--color-dark-blue), var(--color-light-blue));
+    --background-gradient: linear-gradient(to top left, var(--color-dark-blue), var(--color-light-blue));
     background: var(--background-gradient);
     transition: box-shadow var(--transition-time-fast) linear;
     text-decoration: none;
-    padding: 8px;
 }
 
 .article--featured {
     box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.3);
-    --background-gradient: linear-gradient(to bottom right, var(--color-dark-magenta), var(--color-orange));
+    --background-gradient: linear-gradient(to top left, var(--color-dark-magenta), var(--color-orange));
 }
 
 .article:focus {
@@ -19,32 +18,56 @@
 }
 
 .article__wrapper {
-    padding: 8px;
+    padding: 16px;
+    position: relative;
     display: grid;
     height: 100%;
     gap: 8px;
-    grid-template-areas: 'image' 'content';
-    background: var(--background-gradient),
-    linear-gradient(to top right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.7));
-    background-blend-mode: darken;
+}
+
+
+.article--featured .article__wrapper::before,
+.article--featured .article__wrapper::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.article--featured .article__wrapper::before {
+    right: 6px;
+    top: 6px;
+    border-top: 3px solid var(--color-white);
+    border-right: 3px solid var(--color-white);
+    width: calc(50% - 24px);
+    height: 50%;
+}
+
+.article--featured .article__wrapper::after {
+    left: 6px;
+    bottom: 6px;
+    border-left: 3px solid var(--color-white);
+    border-bottom: 3px solid var(--color-white);
+    width: calc(50% - 24px);
+    height: 50%;
 }
 
 .article__image {
-    grid-area: image;
     outline: 0;
     object-fit: cover;
     object-position: center;
     aspect-ratio: 16/9;
     height: 100%;
     max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
 }
 
 .article__content {
     display: flex;
     flex-direction: column;
-    grid-area: content;
     gap: 0.75rem;
-    padding: 8px 8px 0;
+    padding-top: 8px;
     z-index: 1;
 }
 
@@ -102,7 +125,6 @@
 
 
     .article--featured .article__wrapper {
-        grid-template-areas: 'image content';
         grid-template-columns: 1fr 1fr;
         gap: 32px;
     }
