@@ -52,8 +52,8 @@
     aspect-ratio: 16/9;
     height: 100%;
     max-width: 100%;
-    border: 1px solid rgba(255,255,255,0.1);
-    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -67,9 +67,8 @@
     z-index: 1;
 }
 
-
 .article__title {
-    color: var(--color-light-yellow);
+    color: var(--color-white);
     font-size: var(--font-size-T500);
     line-height: var(--line-height-T500);
     transition: var(--transition-time-fast) linear;
@@ -77,8 +76,12 @@
     font-weight: var(--font-weight-bold);
 }
 
+.article__title:hover {
+    color: var(--color-light-yellow);
+}
+
 .article__title:focus {
-    color:var(--color-white);
+    color: var(--color-light-yellow);
     box-shadow: var(--focus-box-shadow);
     outline: var(--focus-outline);
     outline-offset: var(--focus-outline-offset);
@@ -119,33 +122,28 @@
 }
 
 .article__link {
-    display: inline-block;
+    display: inline-flex;
     max-width: max-content;
-    padding: 2px 12px 0;
+    min-height: 24px;
     font-size: var(--font-size-T300);
-    line-height: var(--line-height-T300);
-    background-color: var(--color-light-yellow);
-    border: 2px solid var(--color-light-yellow);
-    color: var(--color-black);
-    text-decoration: none;
+    color: var(--color-white);
+    text-decoration: underline;
     transition: var(--transition-time-fast) linear;
-    transition-property: background-color, color, box-shadow;
+    transition-property: padding, margin, color, box-shadow;
 }
 
 
 .article__link:hover {
-    background-color: var(--color-black);
     color: var(--color-light-yellow);
-    border-color: var(--color-light-yellow);
 }
 
 .article__link:focus {
-    background-color: var(--color-black);
     color: var(--color-light-yellow);
-    border-color: var(--color-light-yellow);
     box-shadow: var(--focus-box-shadow-invert);
     outline: var(--focus-outline);
     outline-offset: var(--focus-outline-offset);
+    padding: 4px;
+    margin: -4px;
 }
 
 .article__tags {

@@ -2,6 +2,7 @@
     display: grid;
     gap: 32px;
     grid-auto-flow: dense;
+    margin-bottom: 64px;
 }
 
 @media (min-width: 48em) {

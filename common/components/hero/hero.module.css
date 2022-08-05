@@ -25,6 +25,10 @@
     --hero-color: var(--color-dark-magenta);
 }
 
+.hero--dark-purple {
+    --hero-color: var(--color-dark-purple);
+}
+
 .hero__wrapper {
     background-color: var(--hero-color);
 }

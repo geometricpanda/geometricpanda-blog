@@ -22,6 +22,7 @@ export const Hero: FC<HeroProps> = ({colour, title, subtitle, ...rest}) => (
       [styles['hero--dark-blue']]: colour === Color.DARK_BLUE,
       [styles['hero--dark-magenta']]: colour === Color.DARK_MAGENTA,
       [styles['hero--dark-teal']]: colour === Color.DARK_TEAL,
+      [styles['hero--dark-purple']]: colour === Color.DARK_PURPLE,
     })}
     {...rest}>
     <div className={styles['hero__wrapper']}>

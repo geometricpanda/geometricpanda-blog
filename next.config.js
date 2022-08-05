@@ -2,8 +2,26 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    async rewrites() {
+        return [
+            {
+                source: '/blog',
+                destination: '/blog/page/1',
+            },
+        ]
+    },
     async redirects() {
         return [
+            {
+                source: '/blog/page/1',
+                destination: '/blog',
+                permanent: true,
+            },
+            {
+                source: '/blog/page',
+                destination: '/blog',
+                permanent: true,
+            },
             {
                 source: '/blog/page/0',
                 destination: '/blog',
@@ -18,7 +36,7 @@ const nextConfig = {
     },
     experimental: {
         runtime: 'nodejs',
-        serverComponents: true,
+        // serverComponents: true,
         images: {
             allowFutureImage: true,
         }

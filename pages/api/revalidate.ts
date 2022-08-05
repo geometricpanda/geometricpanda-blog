@@ -25,6 +25,7 @@ const handler = async (
     const {full_slug} = story.data.story;
     await Storyblok.flushCache();
     await res.revalidate(`/${full_slug}`);
+    await res.revalidate(`/blog/page/0`);
     return res.json({revalidated: true});
   } catch (e) {
     console.error(e);

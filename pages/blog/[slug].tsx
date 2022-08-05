@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = Object.values(links)
     .filter(({published, slug}) => published && slug.includes('blog/'))
-    .map(({slug}) => slug.replace('blog/',''))
+    .map(({slug}) => slug.replace('blog/', ''))
     .map((slug) => ({params: {slug}}));
 
   return {
