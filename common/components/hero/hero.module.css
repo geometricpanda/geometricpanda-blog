@@ -54,6 +54,12 @@
     padding-block: 32px;
 }
 
+@media (min-width: 64em) {
+    .hero__content {
+        padding-right: 25%;
+    }
+}
+
 .hero__title {
     color: var(--hero-contrast);
     font-size: var(--font-size-T600);
