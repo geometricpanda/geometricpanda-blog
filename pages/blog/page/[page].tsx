@@ -12,7 +12,7 @@ import {Pagination} from '../../../common/components/pagination';
 import styles from './page.module.css';
 import Head from 'next/head';
 
-const per_page = 1;
+const per_page = 5;
 
 interface PageProps {
   data: {

@@ -1,7 +1,7 @@
 import {SbBlokData} from '@storyblok/js/dist/types/types';
 import {storyblokEditable} from '@storyblok/react';
 
-import {FC} from 'react';
+import {FC, useId} from 'react';
 import clsx from 'clsx';
 
 import {LANGUAGE, syntaxHighlighter} from '../../../helpers/syntax-highlighter';
@@ -24,12 +24,13 @@ export interface SnippetBlokProps {
 export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
 
   const snippet = syntaxHighlighter(blok.code, blok.language);
+  const id = useId();
 
   return (
     <Container {...storyblokEditable(blok)}>
       <div className={styles['snippet-blok']}>
         <div className={styles['snippet-blok__decoration']}/>
-        <div className={styles['snippet-blok__filename']}>
+        <div className={styles['snippet-blok__filename']} id={id}>
           {blok.filename}
         </div>
         <div className={styles['snippet-blok__language']}>
@@ -38,6 +39,7 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
         <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
              tabIndex={0}
              role={'document'}
+             aria-describedby={id}
              dangerouslySetInnerHTML={{__html: snippet}}/>
       </div>
     </Container>
