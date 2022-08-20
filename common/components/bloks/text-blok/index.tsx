@@ -24,15 +24,18 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
   const onClick: MouseEventHandler<HTMLDivElement> = useCallback(async ($event) => {
     if (($event.target as HTMLElement).tagName === 'A') {
       const target = $event.target as HTMLAnchorElement;
-      const {pathname} = target;
+      const {pathname, host} = target;
 
-      if (pathname.startsWith('/')) {
-        $event.preventDefault();
-        try {
-          await router.push(pathname);
-        } catch (e) {
-          location.assign(pathname)
-        }
+      if (host !== location.host) {
+        return;
+      }
+
+      $event.preventDefault();
+
+      try {
+        await router.push(pathname);
+      } catch (e) {
+        location.assign(pathname)
       }
 
     }
