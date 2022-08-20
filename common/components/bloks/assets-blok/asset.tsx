@@ -34,6 +34,7 @@ export const ImageAsset: FC<AssetProps> = ({asset}) => {
         className={styles['asset__media']}
         alt={alt}
         src={filename}
+        sizes="(max-width: 380px) 380px, 768px"
         width={width}
         height={height}/>
     </a>

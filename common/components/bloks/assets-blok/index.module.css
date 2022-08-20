@@ -3,6 +3,7 @@
     flex-direction: row;
     overflow-x: auto;
     gap: 16px;
+    scroll-snap-type: x proximity;
 }
 
 .assets::-webkit-scrollbar {
@@ -25,6 +26,9 @@
     padding: 16px;
     height: 100%;
     position: relative;
+    scroll-snap-align: center;
+
+
 }
 
 
