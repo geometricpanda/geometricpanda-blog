@@ -3,7 +3,13 @@
 
 html,
 body {
-  font-family: var(--font-family);
-  background-color: var(--color-dark-teal);
-  overflow-x: hidden;
+    font-family: var(--font-family);
+    background-color: var(--color-dark-teal);
+    overflow-x: hidden;
+}
+
+@media (forced-colors: active) {
+    svg.svg-inline--fa {
+        color: text;
+    }
 }

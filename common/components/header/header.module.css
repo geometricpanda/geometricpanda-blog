@@ -7,6 +7,12 @@
     display: block;
 }
 
+@media (forced-colors: active) {
+    .header {
+        background: none;
+    }
+}
+
 .header__container {
     display: grid;
     padding-top: 5px;

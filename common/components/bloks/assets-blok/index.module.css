@@ -27,7 +27,14 @@
     height: 100%;
     position: relative;
     scroll-snap-align: center;
+    border: 2px solid transparent;
+}
 
+@media (forced-colors: active) {
+    .asset:before,
+    .asset:after {
+        display: none;
+    }
 
 }
 
@@ -64,7 +71,6 @@
     outline: var(--focus-outline);
     outline-offset: var(--focus-outline-offset);
 }
-
 
 
 .asset__media {

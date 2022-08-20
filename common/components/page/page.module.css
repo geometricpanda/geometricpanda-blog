@@ -14,3 +14,9 @@
     background-color: var(--color-black);
     padding-bottom: 32px;
 }
+
+@media (forced-colors: active) {
+    .page__decoration {
+        background: none;
+    }
+}

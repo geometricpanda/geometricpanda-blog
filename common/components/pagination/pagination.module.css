@@ -78,4 +78,8 @@
     background-color: var(--color-magenta);
 }
 
-
+@media (forced-colors: active) {
+    .pagination__link--current {
+        border: 0;
+    }
+}

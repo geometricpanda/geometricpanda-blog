@@ -36,6 +36,8 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
           {blok.language}
         </div>
         <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
+             tabIndex={0}
+             role={'document'}
              dangerouslySetInnerHTML={{__html: snippet}}/>
       </div>
     </Container>

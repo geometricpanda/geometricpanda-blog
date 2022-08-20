@@ -3,6 +3,7 @@
     background: var(--background-gradient);
     transition: box-shadow var(--transition-time-fast) linear;
     text-decoration: none;
+    border: 2px solid transparent;
 }
 
 .article--featured {
@@ -25,6 +26,12 @@
     gap: 8px;
 }
 
+@media (forced-colors: active) {
+    .article--featured .article__wrapper::before,
+    .article--featured .article__wrapper::after {
+        display: none;
+    }
+}
 
 .article--featured .article__wrapper::before,
 .article--featured .article__wrapper::after {

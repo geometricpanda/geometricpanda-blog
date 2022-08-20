@@ -28,6 +28,13 @@
     }
 }
 
+@media (forced-colors: active) {
+    .github-blok__decoration:before,
+    .github-blok__decoration:after {
+        display: none;
+    }
+}
+
 
 .github-blok__decoration:before,
 .github-blok__decoration:after {
@@ -71,6 +78,7 @@
     padding: 24px;
     gap: 24px;
     display: flex;
+    border: 2px solid transparent;
 }
 
 .github-blok__fontawesome {
