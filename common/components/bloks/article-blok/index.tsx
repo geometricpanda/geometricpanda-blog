@@ -4,12 +4,12 @@ import {StoryblokComponent, storyblokEditable} from '@storyblok/react';
 import type {SbBlokData} from '@storyblok/js/dist/types/types';
 
 import styles from './index.module.css';
-import {Asset} from '../assets-blok';
+import {AssetInterface} from '../assets-blok/asset';
 
 export interface ArticleBlokInterface extends SbBlokData {
   seo_title: string;
   seo_description: string;
-  seo_image: Asset;
+  seo_image: AssetInterface;
   body: Array<SbBlokData>
 }
 

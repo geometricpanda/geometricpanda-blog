@@ -1,70 +1,109 @@
 .assets {
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    column-gap: var(--spacing-gap);
-    row-gap: var(--spacing-gap);
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 16px;
 }
 
-@media (min-width: 48em) {
+.assets::-webkit-scrollbar {
+    background-color: var(--color-dark-teal);
+    height: 6px;
+}
 
-    .assets--multiple-2 {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .assets--multiple-3 {
-        grid-template-columns: 2.2fr 1fr;
-    }
-
-    .assets--multiple-3 .asset {
-        grid-column: 2;
-    }
-
-    .assets--multiple-3 .asset:nth-child(3n+1) {
-        grid-column: 1;
-        grid-row: span 2;
-    }
-
-    .assets--multiple-4 {
-        max-width: 48em;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .assets--multiple-4 .asset {
-        grid-row: 2;
-    }
-
-    .assets--multiple-4 .asset:nth-child(4n+1) {
-        grid-row: 1;
-        grid-column: span 3;
-    }
-
+.assets::-webkit-scrollbar-thumb {
+    background: var(--color-light-teal);
 }
 
 
 .asset {
     display: flex;
-    align-items: center;
-    padding: 8px;
-    background: linear-gradient(to top left, var(--color-light-blue), var(--color-magenta));
-    max-height: 400px;
-    box-sizing: content-box;
+    flex: 1;
     max-width: max-content;
-    margin: auto;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(255 255 255 / 10%);
+    padding: 16px;
+    height: 100%;
+    position: relative;
 }
+
+
+.asset:before,
+.asset:after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    height: 50%;
+    width: 50%;
+    opacity: 0.25;
+}
+
+.asset:before {
+    right: 4px;
+    top: 6px;
+    border-top: 3px solid var(--color-light-teal);
+    border-right: 3px solid var(--color-light-teal);
+}
+
+.asset:after {
+    left: 4px;
+    bottom: 6px;
+    border-left: 3px solid var(--color-light-teal);
+    border-bottom: 3px solid var(--color-light-teal);
+}
+
 
 .asset:focus,
 .asset__media:focus,
-.asset__media button:focus{
+.asset__media button:focus {
     box-shadow: var(--focus-box-shadow);
     outline: var(--focus-outline);
     outline-offset: var(--focus-outline-offset);
 }
 
+
+
 .asset__media {
-    width: 100%;
-    height: 100%;
-    max-height: 400px;
+    max-height: 500px;
+    min-width: 280px;
+    max-width: 100%;
     object-fit: contain;
-    z-index: 1;
 }
+
+
+@media (min-width: 48em) {
+    .assets {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: unset;
+    }
+
+
+    .assets--single {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .assets--single .asset {
+    }
+
+    .assets--single .asset__media {
+        max-width: max-content;
+    }
+
+    .assets--multiple-3 .asset:not(:nth-child(3n+1)) .asset__media {
+        max-height: 200px;
+    }
+
+    .assets--multiple-3 .asset:nth-child(3n+1) {
+        grid-row: span 2;
+    }
+
+    .assets--multiple-4 .asset__media {
+        max-height: 250px;
+    }
+
+}
+
