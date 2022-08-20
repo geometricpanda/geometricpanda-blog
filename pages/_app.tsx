@@ -10,7 +10,7 @@ import type {FC} from 'react';
 import {StoryblokBridge} from '../common/components/storyblok-bridge';
 
 import {
-  ArticleBlok,
+  ArticleBlok, AssetsBlok,
   HeroBlok,
   SeparatorBlok,
   SnippetBlok,
@@ -28,6 +28,7 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     article: ArticleBlok,
+    asset: AssetsBlok,
     hero: HeroBlok,
     text: TextBlok,
     separator: SeparatorBlok,
