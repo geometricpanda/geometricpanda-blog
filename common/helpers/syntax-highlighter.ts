@@ -13,7 +13,7 @@ export enum LANGUAGE {
 }
 
 export const syntaxHighlighter = (code: string, language: LANGUAGE) => {
-  switch (language) {
+  switch (language.toLowerCase()) {
     case LANGUAGE.JSON:
       return Prism.highlight(code, Prism.languages.javascript, 'json');
     case LANGUAGE.JAVASCRIPT:
