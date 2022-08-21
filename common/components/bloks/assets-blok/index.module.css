@@ -4,6 +4,8 @@
     overflow-x: auto;
     gap: 16px;
     scroll-snap-type: x proximity;
+    max-width: 800px;
+    margin: auto;
 }
 
 .assets::-webkit-scrollbar {
