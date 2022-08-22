@@ -36,27 +36,29 @@ export const GithubRepoBlok: FC<GithubRepoBlokProps> = ({blok}) => {
         [styles['github-blok--intersected']]: intersection?.isIntersecting,
       })}>
         <div className={styles['github-blok__decoration']}/>
-        <div className={styles['github-blok__content']}
-             {...storyblokEditable(blok)}>
-          <div className={styles['github-blok__icon']}>
-            <FontAwesomeIcon
-              icon={faGithub}
-              className={styles['github-blok__fontawesome']}
-            />
-          </div>
-          <div className={styles['github-blok__details']}>
-            {blok.intro && (
-              <p className={styles['github-blok__intro']}>
-                {blok.intro}
-              </p>
-            )}
+        <div className={styles['github-blok__container']}>
+          <div className={styles['github-blok__content']}
+               {...storyblokEditable(blok)}>
+            <div className={styles['github-blok__icon']}>
+              <FontAwesomeIcon
+                icon={faGithub}
+                className={styles['github-blok__fontawesome']}
+              />
+            </div>
+            <div className={styles['github-blok__details']}>
+              {blok.intro && (
+                <p className={styles['github-blok__intro']}>
+                  {blok.intro}
+                </p>
+              )}
 
-            <a href={blok.url.url}
-               target={'_blank'}
-               rel="noreferrer"
-               className={styles['github-blok__link']}>
-              {blok.title}
-            </a>
+              <a href={blok.url.url}
+                 target={'_blank'}
+                 rel="noreferrer"
+                 className={styles['github-blok__link']}>
+                {blok.title}
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,10 @@
 .snippet-blok {
+    --snippet-colour-1: var(--color-dark-purple);
+    --snippet-colour-2: var(--color-purple);
+    --snippet-colour-3: var(--color-white);
+    --snippet-contrast-1: var(--color-dark-magenta);
+    --snippet-contrast-2: var(--color-magenta-light);
+    --snippet-contrast-3: var(--color-white);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: var(--spacing-md) 0;
     margin-bottom: var(--spacing-lg);
@@ -6,9 +12,40 @@
     z-index: 0;
 }
 
+.snippet-blok--css {
+}
+
+.snippet-blok--scss {
+}
+
+.snippet-blok--javascript {
+    --snippet-colour-1: var(--color-orange);
+    --snippet-colour-2: var(--color-light-yellow);
+    --snippet-colour-3: var(--color-black);
+    --snippet-contrast-1: var(--color-dark-yellow);
+    --snippet-contrast-2: var(--color-orange);
+    --snippet-contrast-3: var(--color-white);
+}
+
+.snippet-blok--typescript {
+    --snippet-colour-2: var(--color-dark-blue);
+    --snippet-colour-1: var(--color-light-blue);
+    --snippet-colour-3: var(--color-white);
+    --snippet-contrast-1: var(--color-blue);
+    --snippet-contrast-2: var(--color-dark-teal);
+    --snippet-contrast-3: var(--color-white);
+}
+
+.snippet-blok--html {
+    --snippet-colour-1: var(--color-dark-green);
+    --snippet-colour-2: var(--color-green);
+    --snippet-contrast-1: var(--color-dark-green);
+    --snippet-contrast-2: var(--color-light-green);
+}
+
 .snippet-blok__decoration {
     position: absolute;
-    background: linear-gradient(to right, var(--color-dark-purple), var(--color-purple));
+    background: linear-gradient(to right, var(--snippet-colour-1), var(--snippet-colour-2));
     transform: skew(-5.5deg);
     inset: 0 -8px;
     z-index: -2;
@@ -34,20 +71,20 @@
 .snippet-blok__decoration:before {
     right: 4px;
     top: 6px;
-    border-top: 3px solid var(--color-purple);
-    border-right: 3px solid var(--color-purple);
+    border-top: 3px solid var(--snippet-colour-1);
+    border-right: 3px solid var(--snippet-colour-1);
 }
 
 .snippet-blok__decoration:after {
     left: 4px;
     bottom: 6px;
-    border-left: 3px solid var(--color-purple);
-    border-bottom: 3px solid var(--color-purple);
+    border-left: 3px solid var(--snippet-colour-2);
+    border-bottom: 3px solid var(--snippet-colour-2);
 }
 
 .snippet-blok__filename {
     font-size: var(--font-size-T200);
-    color: var(--color-white);
+    color: var(--snippet-colour-3);
     margin: 4px 0 12px 8px;
     text-align: center;
 }
@@ -61,8 +98,8 @@
     box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5);
     border: 2px solid transparent;
     font-size: var(--font-size-T200);
-    background: linear-gradient(to top left, var(--color-dark-magenta), var(--color-magenta));
-    color: var(--color-white);
+    background: linear-gradient(to top left, var(--snippet-contrast-1), var(--snippet-contrast-2));
+    color: var(--snippet-contrast-3);
 }
 
 @media (forced-colors: active) {
@@ -91,7 +128,7 @@ pre.snippet-blok__snippet {
 }
 
 .snippet-blok__snippet::-webkit-scrollbar-thumb {
-    background: var(--color-purple);
+    background: var(--snippet-colour-2);
 }
 
 
