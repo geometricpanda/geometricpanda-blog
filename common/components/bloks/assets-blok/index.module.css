@@ -3,7 +3,7 @@
     flex-direction: row;
     overflow-x: auto;
     gap: 16px;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     max-width: 800px;
     margin: auto;
 }
@@ -29,6 +29,7 @@
     height: 100%;
     position: relative;
     scroll-snap-align: center;
+    scroll-snap-stop: normal;
     border: 2px solid transparent;
 }
 
