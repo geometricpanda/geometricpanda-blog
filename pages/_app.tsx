@@ -40,7 +40,7 @@ storyblokInit({
 const initialLinks: Array<ILink> = [
   {href: '/', text: 'Home', active: false, icon: faHome},
   {href: '/blog', text: 'Blog', active: false, icon: faBlog},
-  {href: '/news', text: 'News', active: false, icon: faNewspaper},
+  // {href: '/news', text: 'News', active: false, icon: faNewspaper},
   {href: '/links', text: 'Links', active: false, icon: faLink},
 ];
 

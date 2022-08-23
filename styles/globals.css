@@ -13,3 +13,9 @@ body {
         color: text;
     }
 }
+
+@media (prefers-contrast: less) {
+    body {
+        filter: sepia(0.5);
+    }
+}
