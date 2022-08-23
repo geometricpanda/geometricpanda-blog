@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({params}) => {
   const options: StoriesParams = {
     page: page.toString(),
     per_page,
-    sort_by: 'published_at:desc:int',
+    sort_by: 'first_published_at:desc:int',
   };
 
   const response = await storyblokApi.getStories(options);

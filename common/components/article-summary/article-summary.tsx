@@ -47,8 +47,8 @@ export const ArticleSummary: FC<ArticleSummaryProps> = ({story, index}) => (
                 aria-hidden={undefined}
                 className={styles['article__date-icon']}
                 icon={faCalendarAlt}/>
-              {format(story.published_at
-                  ? new Date(story.published_at)
+              {format(story.first_published_at
+                  ? new Date(story.first_published_at)
                   : new Date(),
                 'do LLL yyyy')}
             </div>
