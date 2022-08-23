@@ -21,6 +21,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({params, preview
 
   return {
     notFound: !preview && !data.story,
+    revalidate: 120, // 2 minutes
     props: {
       story: data.story,
       key: data.story.id,
