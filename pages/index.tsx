@@ -56,7 +56,7 @@ const Home: NextPage<HomeProps> = ({latest, featured}) => {
             title={'Welcome to Geometric Panda'}
             subtitle={'A collection of thoughts and experiments'}/>
       <Container>
-        <Grid layout={'3/1-r'} className={styles['home']}>
+        <Grid layout={'2/1-r'} className={styles['home']}>
           <div>
             <FreeText className={styles['home__intro']}>
               <h2>About Me</h2>

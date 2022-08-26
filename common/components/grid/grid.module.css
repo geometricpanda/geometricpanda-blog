@@ -10,6 +10,15 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .grid--2-1 {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .grid--2-1-r {
+        grid-auto-flow: dense;
+        grid-template-columns: 2fr 1fr;
+    }
+
     .grid--3-1 {
         grid-template-columns: 3fr 1fr;
     }
@@ -19,10 +28,12 @@
         grid-template-columns: 3fr 1fr;
     }
 
+    .grid--2-1-r > :nth-child(odd),
     .grid--3-1-r > :nth-child(odd) {
         grid-column: 2;
     }
 
+    .grid--2-1-r > :first-child(even),
     .grid--3-1-r > :first-child(even) {
         grid-column: 1;
     }
