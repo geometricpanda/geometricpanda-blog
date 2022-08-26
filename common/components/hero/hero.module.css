@@ -56,7 +56,12 @@
 
 @media (min-width: 64em) {
     .hero__content {
-        padding-right: 25%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .hero__content > * {
+        grid-column: 1;
     }
 }
 
