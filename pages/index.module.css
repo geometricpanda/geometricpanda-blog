@@ -1,0 +1,35 @@
+.home {
+    padding-top: var(--spacing-xl)
+}
+
+.home__intro {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.home__featured {
+    margin-bottom: var(--spacing-2xl)
+}
+
+.home__featured-title {
+    margin-bottom: var(--spacing-xl)
+}
+
+.home__latest {
+    padding-top: var(--spacing-md);
+    display: grid;
+}
+
+.home__latest-title {
+    margin-bottom: var(--spacing-xl)
+}
+
+.home__latest-articles {
+    display: grid;
+    gap: var(--spacing-gap);
+}
+
+@media (min-width: 48em) {
+    .home__latest-articles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

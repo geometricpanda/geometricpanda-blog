@@ -10,7 +10,7 @@ import styles from './hero.module.css';
 export interface HeroProps extends ComponentProps<'div'> {
   colour: Color;
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 export const Hero: FC<HeroProps> = ({colour, title, subtitle, ...rest}) => (

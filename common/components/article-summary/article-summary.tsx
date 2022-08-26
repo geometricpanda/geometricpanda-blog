@@ -15,13 +15,19 @@ import styles from './article-summary.module.css';
 export interface ArticleSummaryProps {
   story: StoryData<ArticleBlokInterface>;
   index: number;
+  featured?: boolean;
 }
 
-export const ArticleSummary: FC<ArticleSummaryProps> = ({story, index}) => (
+export const ArticleSummary: FC<ArticleSummaryProps> = ({story, featured, index}) => {
+  const isFeature = featured !== undefined
+    ? featured
+    : story.tag_list.includes('featured');
+
+  return (
     <Link href={`/${story.full_slug}`} passHref>
       <a className={clsx({
         [styles['article']]: true,
-        [styles['article--featured']]: story.tag_list.includes('featured'),
+        [styles['article--featured']]: isFeature,
       })}>
         <div className={styles['article__wrapper']}>
           <Image
@@ -36,7 +42,7 @@ export const ArticleSummary: FC<ArticleSummaryProps> = ({story, index}) => (
             <p className={styles['article__title']}>
               {story.content.seo_title}
             </p>
-            {story.tag_list.includes('featured') && (
+            {isFeature && (
               <p className={styles['article__description']}>
                 {story.content.seo_description}
               </p>
@@ -57,4 +63,5 @@ export const ArticleSummary: FC<ArticleSummaryProps> = ({story, index}) => (
       </a>
     </Link>
   )
-;
+  ;
+}

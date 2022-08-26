@@ -182,19 +182,19 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
   integrity sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==
 
-"@storyblok/js@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.7.0.tgz#70ab9da42421723fed141d3cc58924658b5fb77a"
-  integrity sha512-ZlI/712YkaTcJBPECyGctRaFUiWUtbUSlrVrDcoHPKv2bbPTSfvdu4w31VWfsDd7DOz76KHOUpOPdpFZmMqYPg==
+"@storyblok/js@^1.6.6":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.7.2.tgz#b4c6f26a14ddd8b9afa59af164dcb4c94d05e94b"
+  integrity sha512-AYAd9sxiAzMS3lGDdCCPnk6Fqws1Ix5Vr+gByWK7u3ygaNtGrwdsQvKtx7KV0KoPCaDmlk1t6Gp5GNy/4dSI1w==
   dependencies:
     storyblok-js-client "^4.5.6"
 
-"@storyblok/react@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.1.tgz#2cb61f3c50556a0305df5daf8a4ca53d131afb07"
-  integrity sha512-mxYFw73KILz+McasdV6TkSkv5diiOm2yIo2Luhqph7yt7awVJE+wS2+93xCSmGrh4+OStnBcZmq1I97f8ZUNMg==
+"@storyblok/react@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.0.tgz#4a8b90033ef76f4eab3759e2059c73ca6bd3166a"
+  integrity sha512-vaS2QXGjqpi3FJsf2iL6uDxLsDTo4HGNhyGs9Pz6Rctc3Hz2nhADR3w2+bpPosrxI/BfoRnnMMcFST3otiWBpQ==
   dependencies:
-    "@storyblok/js" "^1.7.0"
+    "@storyblok/js" "^1.6.6"
 
 "@swc/helpers@0.4.3":
   version "0.4.3"
@@ -1854,7 +1854,7 @@ stacktrace-js@^2.0.2:
     stack-generator "^2.0.5"
     stacktrace-gps "^3.0.4"
 
-storyblok-js-client@^4.5.6:
+storyblok-js-client@4.5.6, storyblok-js-client@^4.5.6:
   version "4.5.6"
   resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.6.tgz#caab0bb1ead8618f84afcc35be9305883d85e628"
   integrity sha512-S0cXKkEqGDibD32K48FFodjeu/+eF++nrHhrLzo/bKxrnyQiPChPccFAnzsJCQ6uMvRuVGZzjKwM5/sMeBRthg==

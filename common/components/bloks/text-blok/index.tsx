@@ -7,6 +7,7 @@ import styles from './index.module.css';
 
 import {useRouter} from 'next/router';
 import {Container} from '../../container';
+import {FreeText} from '../../free-text';
 
 export interface TextBlokInterface extends SbBlokData {
   heading: string;
@@ -59,9 +60,8 @@ export const TextBlok: FC<TextBlokProps> = ({blok}) => {
       )}
 
       {blok.body && (
-        <div
+        <FreeText
           onClick={onClick}
-          className={styles['text-blok__content']}
           dangerouslySetInnerHTML={{__html: renderRichText(blok.body)}}/>
       )}
 

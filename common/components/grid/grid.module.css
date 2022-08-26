@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+    column-gap: var(--spacing-gutter);
+    row-gap: var(--spacing-gap);
+    align-items: flex-start;
+}
+
+@media (min-width: 64em) {
+    .grid--50-50 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--3-1 {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .grid--3-1-r {
+        grid-auto-flow: dense;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .grid--3-1-r > :nth-child(odd) {
+        grid-column: 2;
+    }
+
+    .grid--3-1-r > :first-child(even) {
+        grid-column: 1;
+    }
+}
+
+
+

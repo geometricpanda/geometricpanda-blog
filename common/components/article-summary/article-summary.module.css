@@ -4,6 +4,7 @@
     transition: box-shadow var(--transition-time-fast) linear;
     text-decoration: none;
     border: 2px solid transparent;
+    display: flex;
 }
 
 .article--featured {
