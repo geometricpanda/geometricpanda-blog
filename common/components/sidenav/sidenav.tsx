@@ -49,7 +49,7 @@ export const Sidenav: FC<SidenavProps> = ({
                 <button
                   ref={closeButton}
                   className={styles['sidenav__close-button']}
-                  aria-label={'Close Menu'}
+                  aria-label={'Menu'}
                   aria-expanded={true}
                   onClick={() => onNavigationChange(false)}>
                   <FontAwesomeIcon icon={faTimes}/>

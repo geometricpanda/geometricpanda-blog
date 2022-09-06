@@ -90,7 +90,8 @@ const Home: NextPage<HomeProps> = ({latest, featured}) => {
 
           </div>
 
-          <div>
+          <div itemScope
+               itemType="http://schema.org/Blog">
 
             <div className={styles['home__featured']}>
 

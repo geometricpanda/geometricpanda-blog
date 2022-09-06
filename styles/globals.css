@@ -10,7 +10,7 @@ body {
 
 @media (forced-colors: active) {
     svg.svg-inline--fa {
-        color: text;
+        color: CanvasText;
     }
 }
 

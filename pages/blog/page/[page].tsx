@@ -12,7 +12,7 @@ import {Pagination} from '../../../common/components/pagination';
 import styles from './page.module.css';
 import Head from 'next/head';
 
-const per_page = 4;
+const per_page = 8;
 
 interface PageProps {
   data: {
@@ -96,7 +96,9 @@ const Page: NextPage<PageProps> = ({data, page, total}) => {
       />
       <Container>
 
-        <div className={styles.articles}>
+        <div className={styles.articles}
+             itemScope
+             itemType="http://schema.org/Blog">
           {data.stories.map((story, index) => (
             <ArticleSummary
               index={index}

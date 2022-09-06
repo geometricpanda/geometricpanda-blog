@@ -8,8 +8,8 @@
     margin: var(--spacing-lg) auto;
 }
 
-.separator:before,
-.separator:after {
+.separator::before,
+.separator::after {
     content: '';
     display: block;
     width: 100px;
@@ -17,11 +17,19 @@
     background-color: var(--color-magenta);
 }
 
-.separator:before {
+@media (forced-colors: active) {
+    .separator::before,
+    .separator::after {
+        background-color: CanvasText;
+    }
+
+}
+
+.separator::before {
     transform: rotate(-0.125turn) translateY(-36px) translateX(-121px)
 }
 
-.separator:after {
+.separator::after {
     transform: rotate(-0.125turn) translateY(-39px) translateX(57px);
 }
 
@@ -39,3 +47,4 @@
         transform: rotate(-0.125turn) translateY(-74px) translateX(72px);
     }
 }
+

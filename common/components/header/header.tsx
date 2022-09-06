@@ -38,8 +38,7 @@ export const Header: FC<HeaderProps> = ({
           <button
             ref={hamburger}
             className={styles['header__hamburger-button']}
-            aria-label={'Open Menu'}
-            aria-expanded={navigationExpanded}
+            aria-label={'Menu'}
             onClick={() => onNavigationChange(true)}>
             <FontAwesomeIcon icon={faBars}/>
           </button>

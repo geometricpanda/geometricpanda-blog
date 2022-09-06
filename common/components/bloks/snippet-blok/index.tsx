@@ -45,7 +45,6 @@ export const SnippetBlok: FC<SnippetBlokProps> = ({blok}) => {
         </div>
         <pre className={clsx(styles['snippet-blok__snippet'], 'language-')}
              tabIndex={0}
-             role={'document'}
              aria-describedby={id}
              dangerouslySetInnerHTML={{__html: snippet}}/>
       </div>
